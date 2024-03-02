@@ -1,0 +1,210 @@
+.site-header {
+	display: inline-flex;
+	align-items: center;
+	background: $white;
+	min-height: 95px;
+	position: fixed;
+	height: auto;
+	z-index: 999;
+	width: 100%;
+	padding: 0;
+	top: 0;
+
+	&.sticky-header {
+
+		&.onScroll {
+			position: fixed !important;
+			width: 100%;
+			opacity: 0;
+			top: 0;
+
+			& > .col {
+				padding-top: 20px;
+			}
+			
+			.wp-block-navigation__container {
+				padding-right: 25px !important;
+
+				li {
+					margin-left: 25px !important;
+				}
+			}
+
+			&::before,
+			&::after {
+				content:"";
+				width: 100vw;
+				height: 100%;
+				display: block;
+				background-color: white;
+				position: absolute;
+				border-bottom: 1px solid lightgrey;
+			}
+			&::before {
+				content:"";
+				left: 0%;
+			}
+			&::after {
+				content:"";
+				right: 50%;
+				z-index: -1;
+			}
+		}
+
+		&.onScrollUp {
+			transition: all .1s ease;
+			z-index: 9999;
+			opacity: 1;
+			margin-top: 0 !important;
+		}
+	}
+
+	&.static {
+
+		nav.header-nav:not(.megamenu) .navbar-toggler-btn {
+			pointer-events: none;
+			position: relative;
+			opacity: 0;
+		}
+
+		&.sticky-header.onScrollUp {
+
+			nav.header-nav:not(.megamenu) .navbar-toggler-btn {
+				animation: fade-in 1s linear both;
+				pointer-events: all;
+				position: fixed;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(xl) {
+		padding: 20px 0;
+	}
+
+	&:where(.is-layout-flex) {
+		gap: 0;
+	}
+
+	&.static {
+		box-shadow: 0 6px 15px #0000000f;
+	}
+
+	& > .wp-block-dp-row-section {
+		width: 100% !important;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+	.wp-block-columns {
+		position: relative;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&-wrap {
+		position: relative;
+	}
+	
+	.top-nav-container {
+		max-height: 40px !important;
+		background-color: $white;
+		
+		@include media-breakpoint-down(xl){
+			display: none;
+		}
+	}
+
+	.wp-block-columns {
+		position: relative;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	&-wrap {
+		position: relative;
+	}
+
+	.wp-block-site-logo {
+		// position: fixed;
+		top: 12px;
+
+		img {
+			max-width: fit-content;
+			height: auto;
+
+			@include media-breakpoint-down(xl){
+				width: auto;
+			}
+		}
+	}
+
+	/**Dark Light Button Implementation**/
+
+	.checkbox {
+		display: none;
+	  }
+	  
+	.switch {
+		background-color: #111;
+		border-radius: 50px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 5px;
+		position: relative;
+		height: 26px;
+		width: 50px;
+		/* Scale the size to your need */
+		transform: scale(0.7);
+	}
+	
+	.switch .ball {
+		background-color: #fff;
+		border-radius: 50%;
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		height: 22px;
+		width: 22px;
+		transform: translateX(0px);
+		transition: transform 0.2s linear;
+	}
+	
+	.checkbox:checked + .switch .ball {
+		transform: translateX(24px);
+	}
+	
+	.fa-moon {
+		color: #f1c40f;
+	}
+	
+	.fa-sun {
+		color: #f39c12;
+	}
+
+	.container-top-menu {
+		justify-content: end;
+		> div {
+			width: auto;
+		}
+
+		.polylang-flags {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.polylang-flags li {
+			display: inline;  
+			&:before {
+				content: "";
+				background-color: transparent;
+			}
+		}
+	}
+
+	
+}

@@ -1,0 +1,43 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+<!-- wp:shortcode -->[hero_option]<!-- /wp:shortcode -->
+<div class="wp-block-dp-row-section container-boxed" style="">
+	<div class="row one-column-layout">
+		<!-- wp:dp/column {"width":"full"} -->
+		<div class="wp-block-dp-column align-self-center" style="">
+			<!-- wp:dp/row-section {"childCount":2,"topPadding":"100","botPadding":"50","blockId":"6a2ef8de-ab81-47c7-943d-ce3666b443ac"} -->
+			<div class="wp-block-dp-row-section container-boxed wp-block-woocommerce-single-product" style="padding-top:100px;padding-bottom:50px;">
+				<div class="row two-column-layout">
+					<!-- wp:dp/column {"width":"half","sizeLargeTablet":"col-lg-6"} -->
+					<div class="wp-block-dp-column align-self-center col-lg-6" style="">
+						<!-- wp:shortcode -->[product_gallery_slider]<!-- /wp:shortcode -->
+					</div>
+					<!-- /wp:dp/column -->
+					<!-- wp:dp/column {"width":"half","sizeLargeTablet":"col-lg-6"} -->
+					<div class="wp-block-dp-column align-self-center col-lg-6" style="">
+						<!-- wp:post-title {"isLink":true,"__woocommerceNamespace":"woocommerce/product-query/product-title"} /-->
+						<!-- wp:woocommerce/product-rating {"isDescendentOfSingleProductBlock":true} /-->
+						<!-- wp:woocommerce/product-price {"isDescendentOfSingleProductBlock":true} /-->
+						<!-- wp:post-excerpt {"__woocommerceNamespace":"woocommerce/product-query/product-summary"} /-->
+						<!-- wp:woocommerce/add-to-cart-form {"isDescendentOfSingleProductBlock":true} /-->    
+						<!-- wp:woocommerce/product-meta -->
+						<div class="wp-block-woocommerce-product-meta">
+							<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+							<div class="wp-block-group">
+								<!-- wp:woocommerce/product-sku /-->
+								<!-- wp:post-terms {"term":"product_cat","prefix":"Category: "} /-->
+								<!-- wp:post-terms {"term":"product_tag","prefix":"Tags: "} /-->
+							</div>
+							<!-- /wp:group -->
+						</div>
+						<!-- /wp:woocommerce/product-meta -->
+					</div>
+					<!-- /wp:dp/column -->
+				</div>
+			</div>
+			<!-- /wp:dp/row-section -->
+			<!-- wp:post-content {"align":"full","layout":{"inherit":true}} /-->
+			<!-- /wp:dp/column -->
+		</div>
+	</div>
+</div>
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer","layout":{"inherit":false}} /-->

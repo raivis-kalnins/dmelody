@@ -1,0 +1,20 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+<!-- wp:group {"tagName":"section","className":"wp-block-group hero hero-default} -->
+<section class="wp-block-group hero hero-default">
+	<!-- wp:group {"className":"container-boxed hero-wrap"} -->
+	<div class="wp-block-group container-boxed hero-wrap">
+		<!-- wp:dp/post-acf-field {"fieldName":"hero_section"} /--><span class="h1">Products Category</span><!-- wp:query-title {"type":"archive","showPrefix":false,"align":"wide"} /--><!-- wp:term-description {"align":"wide"} /-->
+	</div>
+	<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:group {"className":"breadcrumb-wrap container-boxed","layout":{"type":"constrained"}} --><div class="wp-block-group breadcrumb-wrap container-boxed"><!-- wp:shortcode -->[wpseo_breadcrumb]<!-- /wp:shortcode --></div><!-- /wp:group -->
+<div class="wp-block-dp-row-section container-boxed" style=""><div class="row one-column-layout">
+	<!-- wp:dp/column {"width":"full"} -->
+	<div class="wp-block-dp-column align-self-center" style="">
+		<!-- wp:group {"layout":{"inherit":true}} -->
+			<div class="wp-block-group"><!-- wp:woocommerce/legacy-template {"template":"taxonomy-product_attribute"} /--></div>
+		<!-- /wp:group -->
+	</div>
+<!-- /wp:dp/column --></div></div>
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer","layout":{"inherit":false}} /-->

@@ -1,0 +1,96 @@
+#foo-map {
+	position: relative;
+
+	#cms-contact-location {
+		background-color: $black;
+		padding-top: 45px;
+
+		.cms-contact-location-container {
+			position: relative;
+
+			.title,
+			.card-wrap {
+				max-width: 340px;
+				margin-left: 15px;
+
+				@include media-breakpoint-down(md) {
+					max-width: 270px;
+				}
+
+				@include media-breakpoint-down(sm) {
+					display: none;
+				}
+			}
+
+			.title-heading {
+				text-align: center;
+				padding-top: 15px;
+
+				@media only screen and (max-width: 1200px) {
+					display: none;
+				}
+			}
+
+			.cms-button-wrapper {
+
+				@media only screen and (max-width: 1200px) {
+					display: none;
+				}
+			}
+		}
+
+		.tab-info {
+			display: none;
+
+			@include media-breakpoint-down(lg) {
+				display: block !important;
+
+				h2.heading-tag {
+					position: absolute;
+					color: $white;
+					font-size: 23px;
+					line-height: 35px;
+					font-weight: 700;
+					right: 215px;
+					top: -95px;
+				}
+
+				.btn {
+					position: absolute;
+					padding: 5px 40px;
+					top: -95px;
+					right: 20px;
+				}
+			}
+
+			@include media-breakpoint-down(sm) {
+				display: none !important;
+			}
+		}
+
+		.mob-info {
+			display: none;
+
+			@include media-breakpoint-down(sm) {
+				display: block;
+			}
+		}
+	}
+
+	.embedded-map {
+		margin-bottom: 0 !important;
+		position: relative;
+		line-height: 0;
+		z-index: 2;
+		
+		iframe {
+			width: 100vw;
+			height: 620px;
+			vertical-align: bottom;
+		}
+	}
+
+	.cms-contact-location.layout1 .card-wrap {
+		z-index: 9;
+	}
+}

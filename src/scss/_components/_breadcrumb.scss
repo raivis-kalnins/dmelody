@@ -1,0 +1,47 @@
+body {
+	
+	.breadcrumb {
+
+		&-wrap {
+			position: relative;
+			padding: 50px 0;
+			z-index: 2;
+
+			@include media-breakpoint-down(xxl) {
+				padding-left: 0;
+			}
+
+			p {
+				margin-bottom: 0;
+			}
+
+			span {
+				font-weight: $bold;
+
+				a {
+					color: $text-base;
+					text-decoration: none;
+					font-weight: $bold;
+				}
+
+				&.breadcrumb_last {
+					font-weight: $medium;
+					color: $blue;
+
+					strong {
+						font-weight: $medium;
+						color: $blue;
+					}
+				}
+			}
+		}
+
+		&-icon {
+			background: url('../../assets/img/svg/arr-br.svg') center / auto 100% no-repeat;
+			display: inline-block;
+			margin: auto 5px;
+			height: 10px;
+			width: 10px;			
+		}
+	}
+}

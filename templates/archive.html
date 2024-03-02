@@ -1,0 +1,22 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+<!-- wp:group {"tagName":"section","className":"wp-block-group hero hero-default} -->
+<section class="wp-block-group hero hero-default">
+	<!-- wp:group {"className":"container-boxed hero-wrap"} -->
+	<div class="wp-block-group container-boxed hero-wrap">
+		<!-- wp:dp/post-acf-field {"fieldName":"hero_section"} /--><!-- wp:query-title {"type":"archive","className":"h1","align":"wide","style":{"typography":{"lineHeight":"1"},"spacing":{"padding":{"top":"var:preset|spacing|50"}}}} /-->
+	</div>
+	<!-- /wp:group -->
+</section>
+<!-- /wp:group -->
+<!-- wp:dp/row-section {"childCount":1,"sectionID":"news_loop","className":"section__news--listloop"} -->
+<div id="news_loop" class="wp-block-dp-row-section container-boxed section__news--listloop" style="">
+	<div class="row one-column-layout">
+		<!-- wp:dp/column {"width":"full"} -->
+		<div class="wp-block-dp-column align-self-center" style="">
+			<!-- wp:pattern {"slug":"posts-query","className":"posts-query"} /-->
+			<!-- wp:spacer {"height":"70"} --><div style="height:70px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer -->
+		</div>
+		<!-- /wp:dp/column -->
+	</div>
+</div>
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer","layout":{"inherit":false}} /-->

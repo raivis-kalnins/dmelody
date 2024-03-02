@@ -1,0 +1,162 @@
+//@import url('//fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+//@import '../../assets/fonts/avenir/stylesheet.css';
+@import url('//use.typekit.net/avz2fcq.css'); // Termina & Azos
+
+// Font - Families
+$heading-font: 'aktiv-grotesk', sans-serif;
+$body-font: 'aktiv-grotesk', sans-serif;
+
+// Brand colours
+$gradient: linear-gradient(120deg, rgb(6, 45, 185) 0%, rgb(5, 99, 212) 47.4%, rgb(20, 168, 232) 100%);
+
+
+$white: #FFFFFF;
+$black: #000000;
+$blue: #18214C;
+$blue-light: #14A8E8;
+$text-base: #18214C;
+$text-sec:#111529;
+$text-light: #E6E7EE;
+$grey: #72737E;
+$grey-light: #E0E1EB;
+$orange: #fe5000;
+$red: #FF0000;
+
+:root {
+	--primary-color: #{$blue};
+	--base-color-black: #{$black};
+	--secundary-color: #{$blue-light};
+	--text-color-base: #{$text-light};
+	--text-color-sec: #{$text-base};
+	--text-color-dark: #{$text-sec};
+	--bg-color: #{$white};
+	--base-color-white: #{$white};
+	--base-color-grey: #{$grey};
+	--base-color-grey-light: #{$grey-light};
+	--base-color-orange: #{$orange};
+	--base-color-red: #{$red};
+}
+
+$colours: (
+	"white": --base-color-white,
+	"black": --base-color-black,
+	"blue": --primary-color,
+	"blue-light": --secundary-color,
+	"text-base": --text-color-base,
+	"text-sec": --text-color-sec,
+	"text-light": --text-color-light,
+	"grey": --base-color-grey,
+	"grey-light": --base-color-grey-light,
+	"orange": --base-color-orange,
+	"red": --base-color-red
+);
+
+body {
+
+	.has-text-color.has {
+		
+		&-white-color {
+			color: --base-color-white !important;
+		}
+
+		&-black-color {
+			color: --base-color-black !important;
+		}
+
+		&-primary-color {
+			color: --primary-color !important;
+		}
+
+		&-secundary-color {
+			color: --secundary-color !important;
+		}
+
+		&-text-color-base {
+			color: --text-color-base !important;
+		}
+
+		&-text-color-sec {
+			color: --text-color-sec !important;
+		}
+
+		&-text-color-light {
+			color: --text-color-dark !important;
+		}
+
+		&-base-color-grey {
+			color: --base-color-grey !important;
+		}
+
+		&-base-color-grey-light {
+			color: --base-color-grey-light !important;
+		}
+
+		&-base-color-orange {
+			color: --base-color-orange !important;
+		}
+
+		&-base-color-red {
+			color: --base-color-red !important;
+		}
+	}
+}
+
+// Font weight
+$thin: 100;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extrabold: 800;
+
+// Font - Sizes
+$font-sizes: (
+	'body': 16px,
+	//'body2': 14px,
+	'btn': 16px,
+	't21': 21px,
+	'h1': 68px,
+	'h1Tab': 68px,
+	'h1Mob': 36px,
+	'h2L': 56px,
+	'h2LMob': 32px,
+	'h2': 48px,
+	'h2Tab': 38px,
+	'h2Mob': 24px,
+	'h3': 32px,
+	'h3Tab': 18px,
+	'h3Mob': 22px,
+	'h4': 20px,
+	'h4Mob': 20px,
+	'h5': 18px,
+	'h5Mob': 18px,
+	'h6': 17px
+);
+
+$body: map-get($font-sizes, body);
+//$body2: map-get($font-sizes, body2);
+$btn: map-get($font-sizes, btn1);
+$t21: map-get($font-sizes, t21);
+$h1: map-get($font-sizes, h1);
+$h1Tab: map-get($font-sizes, h1Tab);
+$h1Mob: map-get($font-sizes, h1Mob);
+$h2L: map-get($font-sizes, h2L);
+$h2LMob: map-get($font-sizes, h2LMob);
+$h2: map-get($font-sizes, h2);
+$h2Tab: map-get($font-sizes, h2Tab);
+$h2Mob: map-get($font-sizes, h2Mob);
+$h3: map-get($font-sizes, h3);
+$h3Tab: map-get($font-sizes, h3Tab);
+$h3Mob: map-get($font-sizes, h3Mob);
+$h4: map-get($font-sizes, h4);
+$h4Mob: map-get($font-sizes, h4Mob);
+$h5: map-get($font-sizes, h5);
+$h5Mob: map-get($font-sizes, h5Mob);
+$h6: map-get($font-sizes, h6);
+
+// Line height
+$line-h-body: 20px;
+
+$container-margin: calc( -15px - ( ( 100vw - 1400px ) / 2 ) );
+$container-margin-left: calc( 15px + ( ( 100vw - 1400px ) / 2 ) );

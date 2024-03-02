@@ -1,0 +1,66 @@
+
+body {
+
+    &.dark-theme{
+	
+        /** It must be created new styles for new projects for DARK MODE under this section **/
+        /** This is just an example: **/
+    
+        --bg-color: #{$text-sec};
+    
+        background-color: var(--bg-color);
+        
+        .site-header{
+
+            background-color: var(--bg-color);
+
+            &.onScroll{
+                &:after,
+                &:before {
+                    content: "";
+                    background-color: var(--bg-color);
+                }
+            }
+
+            li ul {
+
+                background-color: var(--bg-color) !important;
+
+            }
+
+            p,
+            a{
+                color: var(--text-color-base);
+            }
+
+        }
+
+        .site-footer {
+
+            background-color: var(--primary-color);
+
+            p,
+            a{
+                color: var(--text-color-base) !important;
+            }
+
+            .foo{
+                &__contacts{
+                    background-color: var(--text-color-dark) !important;
+                }
+                &__copy{
+                    background-color: var(--base-color-black) !important;
+                }
+            }
+        
+        }
+    
+        p,
+        a{
+            color: var(--text-color-base);
+        }
+        
+        
+    }
+
+}

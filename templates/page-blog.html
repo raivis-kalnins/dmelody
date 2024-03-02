@@ -1,0 +1,31 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+<!-- wp:shortcode -->[hero_option]<!-- /wp:shortcode -->
+<!-- wp:group {"className":"breadcrumb-wrap container-boxed,"layout":{"type":"constrained"}} -->
+<div class="wp-block-group breadcrumb-wrap container-boxed" style="margin: 0 auto; padding-bottom:0"><!-- wp:shortcode -->[wpseo_breadcrumb]<!-- /wp:shortcode --></div><!-- /wp:group -->
+<!-- wp:dp/row-section {"childCount":1,"sectionID":"news_loop","className":"section__news--listloop"} -->
+<div id="news_loop" class="wp-block-dp-row-section container-boxed section__news--listloop" style="">
+	<div class="row one-column-layout">
+		<!-- wp:dp/column {"width":"full"} -->
+		<div class="wp-block-dp-column align-self-center" style="">
+			<!-- wp:spacer {"height":"70"} --><div style="height:70px" aria-hidden="true" class="wp-block-spacer"></div><!-- /wp:spacer -->
+			<!-- wp:post-content {"align":"full","layout":{"inherit":true}} /-->
+			<!-- wp:query {"queryId":1,"query":{"perPage":9999,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"enhancedPagination":true,"align":"full"} -->
+			<div class="wp-block-query">
+				<!-- wp:post-template {"layout":{"type":"grid","columnCount":1}} -->
+					<!-- wp:post-featured-image {"isLink":true} /-->
+					<div class="wp-block-post--content">
+						<!-- wp:post-title {"className":"h3","isLink":true} /-->
+						<!-- wp:post-terms {"term":"post_tag"} /-->
+						<!-- wp:post-terms {"term":"category"} /-->
+						<!-- wp:post-date /-->
+					</div>
+				<!-- /wp:post-template -->
+				<!-- wp:shortcode -->[load_more_blog]<!-- /wp:shortcode -->					
+				<!-- wp:query-no-results -->
+				<!-- wp:paragraph {"placeholder":"Add text or blocks that will display when a query returns no results."} --><p>No any posts added ...</p><!-- /wp:paragraph --><!-- /wp:query-no-results --></div>
+			<!-- /wp:query -->
+			</div>
+		<!-- /wp:dp/column -->
+	</div>
+</div>
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer","layout":{"inherit":false}} /-->

@@ -1,0 +1,14 @@
+{
+    "customTemplates": [
+        {
+            "name": "page",
+            "title": "Default",
+            "postTypes": ["page"]
+        },
+        {
+            "name": "single",
+            "title": "Single",
+            "postTypes": ["post"]
+        }
+    ]
+}

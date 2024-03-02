@@ -1,0 +1,29 @@
+@import 'variables';
+
+body.wp-admin {
+
+	.wp-block-heading {
+		font-weight: 500;
+		font-family: sans-serif;
+
+		strong {
+			font-weight: 700;
+		}
+	}
+
+	.acf-field-custom-options-scss-block .acf-input .CodeMirror {
+		height: 840px;
+	}
+
+	.acf-field-custom-options-form-field-list .acf-label label {
+		font-size: 11px !important;
+	}
+
+	.edit-post-visual-editor__post-title-wrapper .editor-post-title {
+		margin-left: 0;
+	}
+
+	.editor-styles-wrapper .wp-block {
+		margin-left: 0;
+	}
+}

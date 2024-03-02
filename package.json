@@ -1,0 +1,45 @@
+{
+  "name": "dp",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Fuel-Agency/dp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Fuel-Agency/dp/issues"
+  },
+  "homepage": "https://github.com/The-Fuel-Agency/dp#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.1",
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
+    "parcel": "^2.9.3",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "punycode": "^2.1.1"
+  },
+  "source": [
+    "src/scss/dp-theme-admin.scss",
+    "src/scss/dp-theme-critical.scss",
+    "src/scss/dp-theme-main.scss",
+    "src/js/dp-theme-admin.js",
+    "src/js/dp-theme-main.js"
+  ],
+  "targets": {
+    "default": {
+      "distDir": "./dist"
+    }
+  },
+  "dependencies": {
+    "codemirror": "5",
+    "parcel-plugin-modernizr": "^1.1.4"
+  }
+}

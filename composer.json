@@ -1,0 +1,23 @@
+{
+    "name": "dp/dp",
+    "description": "The starting point base theme for DP Wordpress projects",
+    "type": "wordpress-theme",
+    "authors": [{
+        "name": "Raivis Kalnins",
+        "email": "raivis.kalnins@t-f-a.co.uk"
+    }],
+    "require": {
+        "stoutlogic/acf-builder": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "DP\\": "inc/"
+        },
+        "files": ["inc/acf.php"]
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}

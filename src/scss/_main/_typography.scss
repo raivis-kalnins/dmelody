@@ -1,0 +1,237 @@
+body {
+	font-family: $body-font;
+	font-size: $body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $heading-font;
+}
+
+@mixin h1-styling {
+
+	@include fontRemSize($h1);
+	text-transform: uppercase;
+	font-weight: $regular;
+	margin-bottom: 30px;
+	line-height: 78px;
+	letter-spacing: 0;
+	color: $blue;
+
+	s,
+	em {
+		text-decoration: none;
+		color: $blue-light;
+	}
+
+	// @include media-breakpoint-down(lg) {
+	// 	@include fontRemSize($h1Tab);
+	// 	margin-bottom: 25px;
+	// }
+
+	@include media-breakpoint-down(lg) {
+		@include fontRemSize($h1Mob);
+		letter-spacing: 0;
+		line-height: 42px;
+	}
+}
+
+h1,
+.h1 {
+	@include h1-styling;
+}
+
+@mixin h2-large-styling {
+	@include fontRemSize($h2L);
+	letter-spacing: 0;
+	font-weight: $medium;
+	line-height: 78px;
+	margin-bottom: 30px;
+	color: $text-base;
+
+	@include media-breakpoint-down(lg) {
+		@include fontRemSize($h2LMob);
+		letter-spacing: 0;
+		line-height: 45px;
+	}
+}
+
+.h2-large {
+	@include h2-large-styling;
+}
+
+@mixin h2-styling {
+
+	@include fontRemSize($h2);
+	letter-spacing: 0;
+	font-weight: $medium;
+	line-height: 67px;
+	margin-bottom: 30px;
+	color: $text-base;
+
+	s,
+	em {
+		text-decoration: none;
+		color: $blue-light;
+	}
+
+	a {
+		font-family: $heading-font !important;
+	}
+
+	@include media-breakpoint-down(lg) {
+		@include fontRemSize($h2Tab);
+		margin-bottom: 25px;
+		line-height: 44px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		@include fontRemSize($h2Mob);
+		letter-spacing: 0;
+		line-height: 34px;
+	}
+}
+
+h2,
+.h2 {
+	@include h2-styling;
+}
+
+@mixin h3-styling {
+
+	@include fontRemSize($h3);
+	letter-spacing: 0;
+	font-weight: $bold;
+	line-height: 34px;
+	margin-bottom: 15px;
+
+	s,
+	em {
+		text-decoration: none;
+		color: $blue-light;
+	}
+
+	a {
+		font-family: $heading-font !important;
+	}
+
+	@include media-breakpoint-down(lg) {
+		@include fontRemSize($h3Tab);
+	}
+
+	@include media-breakpoint-down(sm) {
+		@include fontRemSize($h3Mob);
+		letter-spacing: 0;
+		line-height: 24px;
+	}
+}
+
+h3,
+.h3 {
+	@include h3-styling;
+}
+
+h4 {
+	@include fontRemSize($h4);
+	font-weight: $semibold;
+}
+
+h5 {
+	@include fontRemSize($h5);
+}
+
+h6 {
+	@include fontRemSize($h6);
+}
+
+a {
+	font-family: $body-font;
+	text-decoration: none;
+}
+
+p,
+span {
+	@include fontRemSize($body);
+	color: rgba($text-sec, 0.7);
+	font-family: $body-font;
+	font-weight: $regular;
+	letter-spacing: 0;
+	
+
+	a {
+		text-decoration: underline;
+		@include fontRemSize($body);
+		font-family: $body-font;
+		font-weight: $regular;
+	}
+
+	s,
+	em {
+		text-decoration: none;
+		color: $blue;
+	}
+}
+
+@mixin icon-list-styling {
+	list-style: none;
+
+	li {
+		padding-left: 40px !important;
+		
+		&::before {
+			content:'';
+			background: $blue-light url('../../assets/img/svg/li-tick.svg') 100% / auto 100% no-repeat !important;
+			border-radius: 100% !important;
+			display: block !important;
+			height: 25px !important;
+			width: 25px !important;			
+		}
+	}
+}
+
+ul {
+
+	li {
+		color: rgba($text-sec, 0.7);
+		font-weight: $regular;
+		margin-bottom: 20px;
+		position: relative;
+		font-size: $body;
+		
+		s,
+		em {
+			text-decoration: none;
+			color: $blue-light;
+		}
+	}
+
+	&.is-style {
+
+		&-default {
+
+			li {
+				color: rgba($text-sec, 0.7);
+				font-weight: $regular;
+
+				&::before {
+					background-color: $text-base !important;
+				}
+			}
+		}
+
+		&-tick-list {
+
+			li {
+				@include icon-list-styling;
+
+				&::before {
+					background-color: transparent !important;
+				}
+			}
+		}
+	}
+}

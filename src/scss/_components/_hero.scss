@@ -1,0 +1,135 @@
+.hero {	
+	background-position: right center !important;
+	border-bottom: $text-light solid 1px;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-color: $orange !important;
+    position: relative;
+	margin-top: 94px;
+    display: flex;
+	height: 540px;	
+	width: 100%;
+	z-index: 0;
+    top: 0;
+
+	@include media-breakpoint-down(xl) {
+		background: $orange !important;
+		height: auto !important;
+		min-height: 320px;
+	}
+
+	&.hero-white {
+		background-color: $white;
+
+		@include media-breakpoint-down(xl) {
+			background: $white !important;	
+		}
+
+		.hero-wrap {
+
+			&::before {
+				background-color: $white !important;
+			}
+
+			h1 {
+				color: $text-base !important;
+			}
+
+			span,
+			p {
+				color: $text-base !important;
+			}
+
+			&::after {
+				background-image: url('../../assets/img/svg/hero-w-stroke.svg') !important;
+			}
+		}
+	}
+
+	&.hero-title {
+		background: transparent !important;
+		border-bottom: 0;
+		height: auto;
+
+		@include media-breakpoint-down(xl) {
+			min-height: auto;
+		}
+
+		.hero-wrap {
+			padding: 55px 0;
+
+			h1 {
+				color: $text-base !important;
+				margin-bottom: 0;
+			}
+
+			&::before,
+			&:after {
+				content: unset !important;
+			}
+		}
+	}
+
+	&-pre {
+		font-family: $heading-font;
+		color: $blue-light;
+		font-weight: $bold;
+		line-height: 28px;
+		font-size: 22px;		
+	}
+
+	&-wrap {
+		max-height: fit-content;
+		align-self: center;
+		text-align: left;
+		display: block;
+		width: 100%;
+		z-index: 1;
+
+		& > * {
+			position: relative;
+			z-index: 1;
+		}
+
+		@include media-breakpoint-down(xl) {
+			padding: 55px 0;
+
+			&::before,
+			&:after {
+				content: unset !important;
+			}
+		}
+
+		h1,
+		p {
+			color: $white;
+		}
+
+		h1 {
+			margin-bottom: 0;
+			color: $white;
+			
+			@include media-breakpoint-up(lg) {
+				max-width: 750px;
+			}
+		}
+
+		span,
+		p {
+			font-weight: $medium;
+			font-size: 18px;
+			color: $white;
+		}
+
+		p {
+			//animation: fade-in-up 1s linear both;
+			@include media-breakpoint-up(lg) {
+				max-width: 670px;
+			}
+		}
+
+		.btn {
+			margin-top: 30px;
+		}
+	}
+}

@@ -1,0 +1,121 @@
+body {
+	
+	.photo-gallery {
+
+		@include media-breakpoint-down(lg) {
+			overflow: hidden;
+		}
+
+		&-wrapper {
+			height: fit-content;
+			grid-row-gap: 40px;
+			--bs-gutter-x: 40px;
+			
+			@include media-breakpoint-down(sm) {
+				--bs-gutter-x: 20px;
+			}
+
+			.col {
+
+				img {
+					min-height: 300px;
+					max-height: 300px;
+					object-fit: cover;
+					display: block;
+					height: 98%;
+					width: 98%;
+				}
+			}
+		}
+
+		&.swiper-slider {
+
+			.swiper {
+				height: 450px;
+
+				@include media-breakpoint-down(sm) {
+					height: auto;
+				}
+
+				&-wrapper {
+					height: fit-content;
+					--bs-gutter-x: 0;
+					flex-wrap: nowrap;
+					height: 100%;
+					display: flex;
+				}
+
+				&-slide {
+					max-width: fit-content;
+					align-items: center;
+					text-align: center;
+					overflow: hidden;
+					width: auto;
+
+					img {
+						object-fit: contain;
+						max-height: none;
+						margin: 0 auto;
+						display: block;
+						height: auto;
+						width: 100%;
+
+						@include media-breakpoint-down(lg) {
+							min-height: 100%;
+							height: 100%;
+							width: auto;
+						}
+					}
+				}
+
+				&-buttons {
+					justify-content: space-between;
+					max-width: fit-content;
+					position: relative;
+					margin: 50px auto;
+	
+					.swiper-button {
+	
+						&-prev,
+						&-next {
+							background: transparent url('../../assets/img/i/arr-black-l.png') center / auto 100% no-repeat;
+							display: block;
+							width: 16px;
+							height: 16px;
+	
+							&::after {
+								display: none;
+							}
+						}
+
+						&-prev {
+							left: -30px;
+						}
+	
+						&-next {
+							background-image: url('../../assets/img/i/arr-black-r.png');
+							right: -30px;
+						}		
+					}
+
+					.swiper-pagination {
+						position: relative;
+						bottom: 16px;
+
+						&-bullet {
+							background-color: transparent;
+							border: $black solid 2px;
+							opacity: 1;
+							width: 11px;
+							height: 11px;
+
+							&-active {
+								background-color: $black;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

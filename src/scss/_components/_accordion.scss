@@ -1,0 +1,132 @@
+.wp-site-blocks {
+
+	.accordion {
+
+		&-button {
+			background-color: transparent;
+			border-color: $blue !important;
+			box-shadow: none !important;
+			outline: none !important;
+			border-radius: 0;
+			border: 0;
+
+			@include media-breakpoint-down(sm) {
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			.content {
+				font-family: $heading-font;
+				font-weight: $semibold;
+				display: inline-block;
+				position: relative;
+				font-size: 26px;
+				width: 100%;
+
+				@include media-breakpoint-down(lg) {
+					padding-right: 50px;
+					font-size: 22px;
+					line-height: 28px;
+				}
+
+				@include media-breakpoint-down(sm) {
+					padding-right: 90px;
+				}
+			}
+			
+			.bt {
+				background-color: $blue;
+				position: relative;
+				border-radius: 7px;
+				display: block;
+				width: 54px;
+				height: 54px;
+				z-index: 0;
+
+				@include media-breakpoint-down(sm) {
+					margin-left: -50px;
+				}
+
+				&::before {
+					content:'';
+					transition: none !important;
+					font-weight: 400 !important;
+					animation: rotation90degback .2s both linear;
+					background-color: $white;
+					position: absolute;
+					width: 4px;
+					height: 20px;
+					left: 48%;
+					top: 31.4%;
+					z-index: 2;
+					
+				}
+
+				&::after {
+					content:'';
+					transition: none !important;
+					font-weight: 400 !important;
+					animation: fade-in .2s linear both;
+					background-color: $white;
+					position: absolute;
+					width: 20px;
+					height: 4px;
+					left: 33%;
+					top: 46%;
+					z-index: 2;
+				}
+			}
+
+			&::after {
+				display: none;
+			}
+
+			&:not(.collapsed) {
+
+				.bt {
+
+					&::before {
+						animation: rotation90deg .2s both linear;
+					}
+
+					&::after {
+						animation: fade-out .2s linear both;
+					}
+				}
+			}
+
+			&:focus {
+				border-color: transparent;
+				box-shadow: none;
+			}
+		}
+
+		&-item {
+			border-top: solid 1px;
+			border-radius: 0;
+			border-bottom: 0;
+			border-left: 0;
+			border-right: 0;
+
+			&:last-child {
+				border-bottom: solid 1px;
+			}
+		}
+
+		&-body {
+			padding-top: 0;
+			border-top: 0 !important;
+
+			@include media-breakpoint-down(sm) {
+				padding-left: 0;
+			}
+
+			p {
+				font-weight: $regular;
+				color: $text-base;
+				line-height: 30px;
+				max-width: 75%;
+			}
+		}
+	}
+}
