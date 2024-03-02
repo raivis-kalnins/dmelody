@@ -1,9 +1,9 @@
 .hero {	
 	background-position: right center !important;
+	background-color: $grey-light !important;
 	border-bottom: $text-light solid 1px;
 	background-repeat: no-repeat;
-	background-size: auto 100%;
-	background-color: $orange !important;
+	background-size: auto 100%;	
     position: relative;
 	margin-top: 94px;
     display: flex;
@@ -13,7 +13,7 @@
     top: 0;
 
 	@include media-breakpoint-down(xl) {
-		background: $orange !important;
+		background: $grey-light !important;
 		height: auto !important;
 		min-height: 320px;
 	}
@@ -22,7 +22,7 @@
 		background-color: $white;
 
 		@include media-breakpoint-down(xl) {
-			background: $white !important;	
+			background: $white !important;
 		}
 
 		.hero-wrap {

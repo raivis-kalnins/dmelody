@@ -18,7 +18,8 @@ $text-base: #18214C;
 $text-sec:#111529;
 $text-light: #E6E7EE;
 $grey: #72737E;
-$grey-light: #E0E1EB;
+$grey-light: #F9F9F9;
+$grey-dark: #222222;
 $orange: #fe5000;
 $red: #FF0000;
 
@@ -33,6 +34,7 @@ $red: #FF0000;
 	--base-color-white: #{$white};
 	--base-color-grey: #{$grey};
 	--base-color-grey-light: #{$grey-light};
+	--base-color-grey-dark: #{$grey-dark};
 	--base-color-orange: #{$orange};
 	--base-color-red: #{$red};
 }
@@ -47,6 +49,7 @@ $colours: (
 	"text-light": --text-color-light,
 	"grey": --base-color-grey,
 	"grey-light": --base-color-grey-light,
+	"grey-dark": --base-color-grey-dark,
 	"orange": --base-color-orange,
 	"red": --base-color-red
 );
@@ -89,6 +92,10 @@ body {
 
 		&-base-color-grey-light {
 			color: --base-color-grey-light !important;
+		}
+
+		&-base-color-grey-dark {
+			color: --base-color-grey-dark !important;
 		}
 
 		&-base-color-orange {

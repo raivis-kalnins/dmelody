@@ -6,7 +6,7 @@
 		$hero_title = $h['truefalse_hero_title'] ?? '';
 		$hero_h1 = $h['hero_title'] ?? '';
 		if ( !empty($hero_h1) ) { 
-			$hero_t = '<h1 class="alignwide has-white-color wp-block-post-title">'.$hero_h1.'</h1>'; 
+			$hero_t = '<h1 class="alignwide wp-block-post-title">'.$hero_h1.'</h1>'; 
 		} else { 
 			$hero_t = '<!-- wp:post-title {"level":1,"align":"wide","textColor":"white"} /-->';
 		}
