@@ -22,7 +22,12 @@ function footer_global() {
 ?>
 <?php wp_reset_postdata(); edit_post_link(); ?>
 <div class="scroll-up hidden"></div>
-<script id="global-foo-js">document.addEventListener("DOMContentLoaded",function(){ var $=jQuery.noConflict(), home_url='<?=home_url()?>'; shop_page_url='<?=get_permalink( wc_get_page_id( 'shop' ))?>'; $('.btn-back-home').attr('href',home_url); $('a.shop-url').attr('href',shop_page_url); });</script>
+<script id="global-foo-js">
+	document.addEventListener("DOMContentLoaded",function(){ 
+		var $=jQuery.noConflict(), home_url='<?=home_url()?>';
+		$('.btn-back-home').attr('href',home_url);
+	});
+</script>
 <!-- /Footer DP Global -->
 <?php
 };
