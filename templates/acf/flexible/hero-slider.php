@@ -1,19 +1,19 @@
 <?php
 	$id = 0;
 	$heroID = $id + 1;
-	$heroItems = $hero['hero_items'];
+	$heroItems = $hero['hero_items'] ?? '';
 ?>
 <div class="hero-slider" id="hero_<?=$heroID ?>">
 	<div class="hero-slider-container swiper-wrapper">
 		<?php 
 			foreach( $heroItems as $heroItem ): //var_dump($heroItem);
-				$heroItemImg = $heroItem['hero_settings']['hero_image'];
+				$heroItemImg = $heroItem['hero_settings']['hero_image'] ?? '';
 				$heroItemImgBg = wp_get_attachment_image_src($heroItemImg,'full');
-				$heroItemContent = $heroItem['hero_content'];
-				$heroItemBtn = $heroItem['hero_settings']['hero_link'];
-				$heroItemBtnTitle = $heroItem['hero_settings']['hero_link']['title'];
-				$heroItemBtnUrl = $heroItem['hero_settings']['hero_link']['url'];
-				$heroItemBtnTarget = $heroItem['hero_settings']['hero_link']['target'];
+				$heroItemContent = $heroItem['hero_content'] ?? '';
+				$heroItemBtn = $heroItem['hero_settings']['hero_link'] ?? '';
+				$heroItemBtnTitle = $heroItem['hero_settings']['hero_link']['title'] ?? '';
+				$heroItemBtnUrl = $heroItem['hero_settings']['hero_link']['url'] ?? '';
+				$heroItemBtnTarget = $heroItem['hero_settings']['hero_link']['target'] ?? '';
 				$id++;
 		?>
 			<div class="hero-slide swiper-slide" id="hero-slide-<?=$id?>" <?php if( !empty( $heroItemImg ) ) : ?>style="background-image: url('<?=$heroItemImgBg[0]?>')"<?php endif; ?> >
