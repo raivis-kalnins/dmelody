@@ -15,10 +15,10 @@ h6 {
 @mixin h1-styling {
 
 	@include fontRemSize($h1);
-	text-transform: uppercase;
+	text-transform: none;
 	font-weight: $regular;
 	margin-bottom: 30px;
-	line-height: 78px;
+	line-height: 1.2;
 	letter-spacing: 0;
 	color: $blue;
 

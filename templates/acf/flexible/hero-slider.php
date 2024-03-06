@@ -19,7 +19,7 @@
 			<div class="hero-slide swiper-slide" id="hero-slide-<?=$id?>" <?php if( !empty( $heroItemImg ) ) : ?>style="background-image: url('<?=$heroItemImgBg[0]?>')"<?php endif; ?> >
 				<div class="dark-overlay"></div>
 				<?php if( !empty( $heroItemContent ) ) : ?>
-					<div class="hero-body boxed">
+					<div class="hero-body container-boxed">
 						<?=$heroItemContent?>
 						<?php if( !empty( $heroItemBtn ) ) : ?>
 							<a href="<?=$heroItemBtnUrl?>" <?php if( !empty( $heroItemBtnTarget ) ) : ?>target="<?=$heroItemBtnTarget?>" <?php endif; ?>class="btn btn-outline-light"><?=$heroItemBtnTitle?></a>

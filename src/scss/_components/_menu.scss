@@ -422,6 +422,7 @@ body {
 					top: 0;
 
 					.navbar-toggler-btn {
+						position: absolute;
 						display: block;
 
 						@include media-breakpoint-up(xl) {
