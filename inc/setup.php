@@ -509,28 +509,32 @@ add_action( 'after_setup_theme', 'register_navwalker' );
  */
 function custom_admin_js() {
 	echo "<link rel='stylesheet' href='". get_stylesheet_directory_uri() ."/inc/libraries/codemirror/lib/codemirror.css'>";
-	echo "<link rel='stylesheet' href='". get_stylesheet_directory_uri() ."/inc//libraries/codemirror/theme/dracula.css'>";
-	echo "<script src='". get_stylesheet_directory_uri() ."/inc//libraries/codemirror/lib/codemirror.js'></script>";
-	echo "<script src='". get_stylesheet_directory_uri() ."/inc//libraries/codemirror/mode/sass/sass.js'></script>";
-	echo "<script src='". get_stylesheet_directory_uri() ."/inc//libraries/codemirror/mode/css/css.js'></script>";
+	echo "<link rel='stylesheet' href='". get_stylesheet_directory_uri() ."/inc/libraries/codemirror/theme/dracula.css'>";
+	echo "<script src='". get_stylesheet_directory_uri() ."/inc/libraries/codemirror/lib/codemirror.js'></script>";
+	echo "<script src='". get_stylesheet_directory_uri() ."/inc/libraries/codemirror/mode/sass/sass.js'></script>";
+	echo "<script src='". get_stylesheet_directory_uri() ."/inc/libraries/codemirror/mode/css/css.js'></script>";
 	echo "<script type='text/javascript'>
-			var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('acf-field_custom-options_scss_block'), {
-				lineNumbers: true,
-				theme: 'dracula',
-				mode:  'css'
-			});
-			var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('acf-field_custom-options_meta_header'), {
-				lineNumbers: true,
-				theme: 'dracula',
-				mode:  'css'
-			});
-			var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('acf-field_custom-options_sc_footer'), {
-				lineNumbers: true,
-				theme: 'dracula',
-				mode:  'css'
-			});
-		</script>";
+		var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('acf-field_custom-options_scss_block'), {
+			lineNumbers: true,
+			theme: 'dracula',
+			mode:  'css'
+		});
+		var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('acf-field_custom-options_meta_header'), {
+			lineNumbers: true,
+			theme: 'dracula',
+			mode:  'css'
+		});
+		var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('acf-field_custom-options_sc_footer'), {
+			lineNumbers: true,
+			theme: 'dracula',
+			mode:  'css'
+		});
+	</script>";
 }
+global $pagenow;
+if ( (function_exists('acf_add_options_page')) && ( $pagenow == 'admin.php' ) ):
+	add_action('admin_footer', 'custom_admin_js');
+endif;
 
 $admin_url = get_site_url(null, '/wp-admin/admin.php?page=acf-options', 'https');
 
