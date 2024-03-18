@@ -12,8 +12,8 @@ if ( !empty($formItems) ) :
 
 		// Variables and set to empty values
 		$full_name = $first_name = $last_name = $email =  $phone =  $subject = $company = $country =  $sectors =  $url =  $message =  $located  = $file =  $agree = '';
-		$full_nameErr = $first_nameErr = $last_nameErr = $emailErr =  $phoneErr =  $subjectErr = $companyErr =  $countryErr =  $sectorsErr = $dateErr = $timeErr =  $urlErr =  $messageErr =  $fileErr =  $rangeErr = $locatedErr = $locatedErrInfo = $agreeErr = '';
-		$full_name_tomail = $first_name_tomail = $last_name_tomail = $email_tomail = $phone_tomail = $subject_tomail = $company_tomail = $country_tomail = $sectors_tomail = $date_tomail = $time_tomail = $url_tomail = $range_tomail = $located_tomail = $message_tomail = $file_tomail = $agree_tomail = '';
+		$full_nameErr = $first_nameErr = $last_nameErr = $emailErr =  $phoneErr =  $subjectErr = $companyErr =  $countryErr =  $sectorsErr = $dateErr = $adultsErr = $kidsErr = $timeErr =  $urlErr =  $messageErr =  $fileErr =  $rangeErr = $locatedErr = $locatedErrInfo = $agreeErr = '';
+		$full_name_tomail = $first_name_tomail = $last_name_tomail = $email_tomail = $phone_tomail = $subject_tomail = $company_tomail = $country_tomail = $sectors_tomail = $date_tomail = $date_tomail = $date_tomail = $time_tomail = $url_tomail = $range_tomail = $located_tomail = $message_tomail = $file_tomail = $agree_tomail = '';
 		$captcha_class = $captcha_class ?? '';
 		$response_txt = $response_txt ?? '';
 
@@ -55,6 +55,8 @@ if ( !empty($formItems) ) :
 		$message_pl = $formItem['message_placeholder'] ?? '';
 		$file_pl = $formItem['file_placeholder'] ?? '';
 		$date_pl = $formItem['date_placeholder'] ?? '';
+		$adults_pl = $formItem['adults_placeholder'] ?? '';
+		$kids_pl = $formItem['kids_placeholder'] ?? '';
 		$time_pl = $formItem['time_placeholder'] ?? '';
 		$url_pl = $formItem['url_placeholder'] ?? '';
 		$range_pl = $formItem['range_placeholder'] ?? '';
@@ -75,13 +77,15 @@ if ( !empty($formItems) ) :
 		$label_message = $formItem['message_label'] ?? '';
 		$label_file = $formItem['file_label'] ?? '';
 		$label_date = $formItem['date_label'] ?? '';
+		$label_adults = $formItem['adults_label'] ?? '';
+		$label_kids = $formItem['kids_label'] ?? '';
 		$label_time = $formItem['time_label'] ?? '';
 		$label_url = $formItem['url_label'] ?? '';
 		$label_range = $formItem['range_label'] ?? '';
 		$label_agree = $formItem['agree_label'] ?? '';
 		$label_located = $formItem['located_label'] ?? '';
 
-		$full_name_label = $first_name_label = $last_name_label = $email_label = $phone_label = $subject_label = $company_label = $country_label = $sectors_label = $message_label = $file_label = $date_label = $time_label = $url_label = $range_label = $located_label = '';
+		$white_label = $full_name_label = $first_name_label = $last_name_label = $email_label = $phone_label = $subject_label = $company_label = $country_label = $sectors_label = $message_label = $file_label = $date_label = $time_label = $url_label = $range_label = $located_label = '';
 
 		if ( $labels == "true" ) {
 

@@ -92,7 +92,7 @@ $dp_footer_menu = array(
 						<!-- wp:social-links {"iconColor":"foreground","iconColorValue":"#000000","openInNewTab":true,"size":"has-small-icon-size","align":"center","className":"is-style-logos-only","layout":{"type":"flex","justifyContent":"left","flexWrap":"wrap"}} -->
 						<ul class="wp-block-social-links aligncenter has-small-icon-size has-icon-color is-style-logos-only">
 							<!-- wp:social-link {"url":"<?=$yt?>","service":"youtube"} /-->
-							<!-- wp:social-link {"url":"<?=$tw?>","service":"twitter"} /-->
+							<!-- wp:social-link {"url":"<?=$tw?>","service":"x"} /-->
 							<!-- wp:social-link {"url":"<?=$fb?>","service":"facebook"} /-->
 							<!-- wp:social-link {"url":"<?=$in?>","service":"instagram"} /-->
 							<!-- wp:social-link {"url":"<?=$ln?>","service":"linkedin"} /-->

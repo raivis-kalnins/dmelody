@@ -25,5 +25,9 @@ body.wp-admin {
 
 	.editor-styles-wrapper .wp-block {
 		margin-left: 0;
+
+		&.block-list-appender {
+			max-width: 40px;
+		}
 	}
 }

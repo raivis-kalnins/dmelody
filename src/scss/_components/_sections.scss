@@ -2,29 +2,51 @@ body {
 
 	.section {
 
-		&__intro {
+		&__about-us {
 			background-position: center top;
 			background-repeat: no-repeat;
-			background-size: inherit;
+			background-size: 100% auto;
 			position: relative;
 
+			h2 {
+				
+				&::after {
+					border-color: $grey-light;
+				}
+			}
+			
+			em {
+				color: $grey-light;
+			}
+
 			@include media-breakpoint-down(lg) {
-				background-position-y: -320px !important;
-				padding-bottom: 200px !important;
-				padding-top: 60px !important;
 			}
 
 			@include media-breakpoint-down(sm) {
-				background-position: 70px -50px !important;
-				
-				.col-sm-6 {
-					flex: 0 0 auto;
-					width: 25%;
+			}
+		}
 
-					& + .col-sm-6 {
-						width: 75%;
+		&__gallery {
+
+			.photo-gallery {
+				
+				&-wrapper {
+					grid-row-gap: 15px;
+					--bs-gutter-x: 15px;
+
+					img {
+						border-radius: 14px;
+						min-height: 220px !important;
+						max-height: 220px!important;
 					}
 				}
+			}
+		}
+
+		&__partners {
+
+			.wp-block-image img {
+				border-radius: 14px;
 			}
 		}
 	}

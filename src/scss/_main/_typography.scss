@@ -67,16 +67,34 @@ h1,
 @mixin h2-styling {
 
 	@include fontRemSize($h2);
-	letter-spacing: 0;
+	text-transform: uppercase;
 	font-weight: $medium;
-	line-height: 67px;
 	margin-bottom: 30px;
-	color: $text-base;
+	position: relative;
+	line-height: 67px;
+	letter-spacing: 0;
+	color: $grey;
 
-	s,
+	&::after {
+		content:'';
+		border-top: rgba($text-base,0.7) solid 5px;
+		border-radius: 14px;
+		position: absolute;
+		width: 35px;
+		bottom: 0;
+		height: 0;
+		left: 0;
+	}
+
+	strong,
 	em {
 		text-decoration: none;
-		color: $blue-light;
+		font-style: normal;
+		color: $text-base;
+
+		&::after {
+			content:unset;
+		}
 	}
 
 	a {

@@ -3,7 +3,9 @@
 	function testimonialsShortcode() {
 		$url = home_url();
 
-		$testimonials = get_fields('options')['testimonials_list'];
+		$testimonials = get_fields('options')['testimonials_list'] ?? '';
+
+		$loop =  $loop ?? '';
 
 		foreach( $testimonials as $testimonial ) :
 
@@ -13,10 +15,9 @@
 			$text = $testimonial["testimonial_text"] ?? '';
             $name = $testimonial["testimonial_name"] ?? '';
             $role = $testimonial["testimonial_role"] ?? '';
-
 			$loop =  $loop ?? '';
 
-		    $loop .='<div class="swiper-slide">
+		    $loop .= '<div class="swiper-slide">
 						<div class="testimonials-list__item">
 							<div class="testimonials-list__item--img"><img src="'. $ico .'" alt="'.$name.'"></div>
 							<div class="testimonials-list__item--text h3">'. wp_trim_words( $text, 25, '...' ) .'</div>
