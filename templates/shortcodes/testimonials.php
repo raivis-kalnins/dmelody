@@ -1,11 +1,10 @@
 <?php
 	// Add short code testimonials loop [testimonials]
 	function testimonialsShortcode() {
+		
 		$url = home_url();
 
-		$testimonials = get_fields('options')['testimonials_list'] ?? '';
-
-		$loop =  $loop ?? '';
+		$testimonials = get_fields('options_lv')['testimonials_list'];
 
 		foreach( $testimonials as $testimonial ) :
 
@@ -15,19 +14,24 @@
 			$text = $testimonial["testimonial_text"] ?? '';
             $name = $testimonial["testimonial_name"] ?? '';
             $role = $testimonial["testimonial_role"] ?? '';
+
 			$loop =  $loop ?? '';
 
-		    $loop .= '<div class="swiper-slide">
+		    $loop .='<div class="swiper-slide">
 						<div class="testimonials-list__item">
 							<div class="testimonials-list__item--img"><img src="'. $ico .'" alt="'.$name.'"></div>
-							<div class="testimonials-list__item--text h3">'. wp_trim_words( $text, 25, '...' ) .'</div>
-                            <div class="testimonials-list__item--name h3">'. $name .'</div>
+							<div class="testimonials-list__item--name p">'. $name .'</div>
+							<div class="testimonials-list__item--text p">"'. wp_trim_words( $text, 95, '...' ) .'"</div>                            
                             <div class="testimonials-list__item--role">'. $role .'</div>
 						</div>
 					</div>';
 		endforeach;
 
-		return '<div class="testimonials-slider swiper"><div class="testimonials-list swiper-wrapper">'. $loop .'</div><div class="swiper-pagination"></div><div class="wp-block-dp-button-boot"><a class="btn btn-primary" href="'. $url .'/feedback/">View all Feedback</a></div></div>';
+		return '<div class="testimonials-slider swiper">
+					<div class="testimonials-list swiper-wrapper">'. $loop .'</div>
+					<div class="testimonials-slider--nav"><div class="swiper-button-prev"></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div></div>
+					<!--<div class="wp-block-tfa-button-boot"><a class="btn btn-primary" href="'. $url .'/feedback/">View all Feedback</a></div>-->
+				</div>';
 	}
 	add_shortcode('testimonials', 'testimonialsShortcode');
 ?>

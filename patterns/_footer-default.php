@@ -113,7 +113,7 @@ $dp_footer_menu = array(
 		<!-- wp:dp/column {"width":"full"} -->
 		<div class="wp-block-dp-column align-self-center" style="">
 			<!-- wp:paragraph {"align":"center"} -->
-			<p class="has-text-align-center">© <em>2023</em> DP. All Rights Reserved. | <a rel="noreferrer noopener" href="https://t-f-a.co.uk/" target="_blank">Design by DP</a></p>
+			<p class="has-text-align-center">© <em>2023</em> DP. All Rights Reserved. | <a rel="noreferrer noopener" href="https://digitalpulse.click/" target="_blank">Design by DP</a></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:dp/column -->

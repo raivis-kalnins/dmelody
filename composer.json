@@ -4,7 +4,7 @@
     "type": "wordpress-theme",
     "authors": [{
         "name": "Raivis Kalnins",
-        "email": "raivis.kalnins@t-f-a.co.uk"
+        "email": "info@websolutions-abc.com"
     }],
     "require": {
         "stoutlogic/acf-builder": "^1.9"

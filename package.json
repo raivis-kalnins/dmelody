@@ -39,7 +39,6 @@
     }
   },
   "dependencies": {
-    "codemirror": "5",
     "parcel-plugin-modernizr": "^1.1.4"
   }
 }
