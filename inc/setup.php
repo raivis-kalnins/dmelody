@@ -327,6 +327,8 @@ function cf7_select_country($tag) {
 }
 add_filter( 'wpcf7_form_tag', 'cf7_select_country', 10, 2);
 
+remove_action( 'wpcf7_swv_create_schema', 'wpcf7_swv_add_select_enum_rules', 20, 2 );
+
 /**
  * Contact Form 7 custom Sectors select list
  */
