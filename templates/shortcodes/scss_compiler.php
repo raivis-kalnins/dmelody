@@ -1,6 +1,6 @@
 <?php
 
-	require_once get_template_directory() . '/inc/libraries/scssphp/scss.inc.php';
+	require_once get_template_directory() . '/inc/scssphp/scss.inc.php';
 	use ScssPhp\ScssPhp\Compiler;
 
 	function remove_spaces($string){

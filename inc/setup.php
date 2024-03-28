@@ -59,7 +59,7 @@ if ( file_exists( get_stylesheet_directory() . '/inc/patterns.php' ) ) {
 
 // Include Woocommerce
 if (class_exists('Woocommerce')) {
-	require get_stylesheet_directory() . '/inc/woocommerce/functions.php';
+	require get_stylesheet_directory() . '/inc/woofunctions.php';
 }
 
 /**
@@ -510,47 +510,37 @@ add_action( 'after_setup_theme', 'register_navwalker' );
  * Custom CSS Theme Options Visual Code Editor
  */
 function custom_admin_js() {
-	echo "<link rel='stylesheet' href='". get_stylesheet_directory_uri() ."/inc/libraries/codemirror/lib/codemirror.css'>";
-	echo "<link rel='stylesheet' href='". get_stylesheet_directory_uri() ."/inc/libraries/codemirror/theme/dracula.css'>";
-	echo "<script src='". get_stylesheet_directory_uri() ."/inc/libraries/codemirror/lib/codemirror.js'></script>";
-	echo "<script src='". get_stylesheet_directory_uri() ."/inc/libraries/codemirror/mode/sass/sass.js'></script>";
-	echo "<script src='". get_stylesheet_directory_uri() ."/inc/libraries/codemirror/mode/css/css.js'></script>";
+
+	echo '	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css" integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/dracula.min.css" integrity="sha512-gFMl3u9d0xt3WR8ZeW05MWm3yZ+ZfgsBVXLSOiFz2xeVrZ8Neg0+V1kkRIo9LikyA/T9HuS91kDfc2XWse0K0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js" integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/sass/sass.min.js" integrity="sha512-KX6urL7liHg1q4mBDqbaX4WGbiTlW0a4L6gwr6iBl2AUmf3n+/L0ho5mf7zJzX8wHCv6IpDbcwVQ7pKysReD8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js" integrity="sha512-rQImvJlBa8MV1Tl1SXR5zD2bWfmgCEIzTieFegGg89AAt7j/NBEe50M5CqYQJnRwtkjKMmuYgHBqtD1Ubbk5ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>';
+	
 	echo "<script type='text/javascript'>
-		var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('acf-field_custom-options_scss_block'), {
-			lineNumbers: true,
-			theme: 'dracula',
-			mode:  'css'
-		});
-		var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('acf-field_custom-options_meta_header'), {
-			lineNumbers: true,
-			theme: 'dracula',
-			mode:  'css'
-		});
-		var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('acf-field_custom-options_sc_footer'), {
-			lineNumbers: true,
-			theme: 'dracula',
-			mode:  'css'
-		});
-	</script>";
-}
-global $pagenow;
-if ( (function_exists('acf_add_options_page')) && ( $pagenow == 'admin.php' ) ):
-	add_action('admin_footer', 'custom_admin_js');
-endif;
-
-$admin_url = get_site_url(null, '/wp-admin/admin.php?page=acf-options', 'https');
-
-if( function_exists('acf_add_options_page') && $admin_url ) {
-	add_action('admin_footer', 'custom_admin_js');
+				if( document.body.classList.contains('toplevel_page_acf-options') ) {
+					var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('acf-field_custom-options_scss_block'), {
+						lineNumbers: true,
+						theme: 'dracula',
+						mode:  'css'
+					});
+					var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('acf-field_custom-options_meta_header'), {
+						lineNumbers: true,
+						theme: 'dracula',
+						mode:  'css'
+					});
+					var myCodeMirror = CodeMirror.fromTextArea(document.getElementById('acf-field_custom-options_sc_footer'), {
+						lineNumbers: true,
+						theme: 'dracula',
+						mode:  'css'
+					});
+				}
+			</script>";
 }
 
-// WP core warnings FIX
-add_filter('theme_file_path', function($path, $file) {
-    if($file === 'theme.json') {
-        return false;
-    }
-    return $path;
-}, 0, 2);
+if( function_exists('acf_add_options_page') ) {
+	add_action('admin_footer', 'custom_admin_js');
+}
 
 // Woo Add sort by title
 function add_custom_sorting_options( $options ){
