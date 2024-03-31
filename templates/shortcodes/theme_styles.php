@@ -6,7 +6,7 @@
 		 * Getting img value from admin side
 		 */
 
-		 $theme_settings_img = get_fields('options')['img_border'] ?? '';
+		 $theme_settings_img = get_fields('options')['img_border'];
 
 
 		$styles = array (

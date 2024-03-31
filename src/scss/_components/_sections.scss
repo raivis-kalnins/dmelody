@@ -45,39 +45,65 @@ body {
 
 		&__partners {
 
+			img {
+				border-radius: 14px;
+				display: block;
+			}
 		}
 
 		&__testimonials {
 
 			.testimonials-slider {
-				height: 400px;
 
 				.testimonials-list {
 
 					&__item {
+						max-width: fit-content;
 						position: relative;
 						overflow: hidden;
+						margin: 0 auto;
 						display: flex;
-						width: 33.33%;
+						padding: 40px 0;
+						width: 100%;
 
 						&--img {
+							width: 140px;
+							height: 140px;
 
 							img {
 								border-radius: 14px;
-								max-width: 100%;
 								display: block;
-								height: 30px;
-								width: auto;
+								height: auto;
+								width: 140px;
 							}
 						}
 
 						&--name {
-
+							padding: 15px 15px 0 170px;
+							font-weight: $bold;
+							position: absolute;
+							min-width: 100%;
+							font-size: 24px;
+							display: block;
+							width: 100%;
 						}
 
 						&--text {
-
+							padding: 0 30px 15px 30px;
+							line-height: 24px;
+							margin-top: 58px;
+							max-width: 520px;
+							font-size: 18px;
+							width: 100%;
 						}
+					}
+				}
+
+				&--nav {
+
+					.swiper-button-prev,
+					.swiper-button-next {
+						display: none;
 					}
 				}
 			}

@@ -72,24 +72,14 @@ document.addEventListener("DOMContentLoaded", function() {
 		observeSlideChildren: true,
 		slideToClickedSlide: true,
 		updateOnWindowResize: true,
-		spaceBetween: 30,
+		slidesPerView: 2,
+		spaceBetween: 20,
 		autoHeight: true,
 		loop: true,
 		speed: 4000,
-		breakpoints: {
-			320: {
-				slidesPerView: 1
-			},
-			760: {
-				slidesPerView: 2
-			},
-			992: {
-				slidesPerView: 4
-			}
-		},
-		autoplay: {
-			disableOnInteraction: false,
-		},
+		// autoplay: {
+		// 	disableOnInteraction: false,
+		// },
 		keyboard: {
 			enabled: true,
 			onlyInViewport: false,
@@ -98,10 +88,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			el: '.testimonials-slider--nav .swiper-pagination',
 			clickable: true,
 		},
-		navigation: {
-			nextEl: '.testimonials-slider--nav .swiper-button-next',
-			prevEl: '.testimonials-slider--nav .swiper-button-prev',
-		},
+		navigation: false,
 		grabCursor: true
 	});
 });

@@ -24,7 +24,13 @@
                     "slug": "black"
                 }
             ],
-            "gradients": ""
+            "gradients": [
+                {
+                    "slug": "n-a",
+                    "gradient": "linear-gradient(to left,rgb(0,0,0) 0%)",
+                    "name": ""
+                }
+            ]
         },
         "layout": {
             "contentSize": "100%",
