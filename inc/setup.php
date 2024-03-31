@@ -551,3 +551,45 @@ function add_custom_sorting_options( $options ){
 	return $options;
 }
 add_filter( 'woocommerce_catalog_orderby', 'add_custom_sorting_options' );
+
+function combine_json_files_on_setup() {
+
+    function combine_json_files( $input_files = array(), $output_path ) {
+
+        $contents = [];
+
+        foreach ( $input_files as $input_file ) {
+			
+            // Load file contents
+            $file_contents = file_get_contents( $input_file );
+            
+            // Check if file contents are successfully loaded
+            if ($file_contents === false) {
+                continue; 
+            }
+
+            // Decode the JSON string
+            $json_data = json_decode($file_contents, true);
+
+            // Check if JSON decoding was successful
+            if ($json_data === null && json_last_error() !== JSON_ERROR_NONE) {
+                continue;
+            }
+
+            // Merge the arrays
+            $contents = array_replace_recursive($contents, $json_data);
+        }
+        file_put_contents( $output_path, json_encode( $contents, JSON_PRETTY_PRINT ) );
+    }
+
+    combine_json_files(
+        [
+            get_theme_file_path( 'json-parts/version.json' ),
+            // get_theme_file_path( 'json-parts/customTemplates.json' ),
+            get_theme_file_path( 'json-parts/theme-settings.json' ),
+            get_theme_file_path( 'json-parts/styles.json' ),
+        ],
+        get_theme_file_path( 'theme.json' )
+    );
+}
+add_action( 'after_setup_theme', 'combine_json_files_on_setup' );

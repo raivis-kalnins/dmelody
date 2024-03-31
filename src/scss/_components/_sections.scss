@@ -45,8 +45,41 @@ body {
 
 		&__partners {
 
-			.wp-block-image img {
-				border-radius: 14px;
+		}
+
+		&__testimonials {
+
+			.testimonials-slider {
+				height: 400px;
+
+				.testimonials-list {
+
+					&__item {
+						position: relative;
+						overflow: hidden;
+						display: flex;
+						width: 33.33%;
+
+						&--img {
+
+							img {
+								border-radius: 14px;
+								max-width: 100%;
+								display: block;
+								height: 30px;
+								width: auto;
+							}
+						}
+
+						&--name {
+
+						}
+
+						&--text {
+
+						}
+					}
+				}
 			}
 		}
 	}

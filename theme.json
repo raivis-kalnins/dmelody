@@ -1,1 +1,104 @@
-{"$schema":"https:\/\/schemas.wp.org\/trunk\/theme.json","version":2,"customTemplates":[{"name":"page","title":"Default","postTypes":["page"]},{"name":"single","title":"Single","postTypes":["post"]}],"settings":{"appearanceTools":true,"border":{"color":true,"radius":true,"width":true,"style":true},"color":{"link":true,"duotone":"","palette":"","gradients":[{"slug":"n-a","gradient":"linear-gradient(to left,rgb(0,0,0) 0%)","name":""}]},"layout":{"contentSize":"100%","wideSize":"1360px"},"typography":{"fontSizes":[{"slug":"small","size":"11px","name":"Small"},{"slug":"medium","size":"16px","name":"Medium"},{"slug":"large","size":"24px","name":"Large"},{"slug":"x-large","size":"36px","name":"X Large"}],"fontFamilies":[{"fontFamily":"\"Bestermind Regular\", serif","name":"Bestermind Regular","slug":"bestermind-regular","fontFace":[{"fontFamily":"Bestermind Regular","fontWeight":"400","fontStyle":"normal","fontStretch":"normal","src":{"file":".\/assets\/fonts\/bestermind\/BestermindRegular.woff"}}]},{"fontFamily":"\"Avenir Roman\", serif","name":"Avenir Roman","slug":"avenir-roman","fontFace":[{"fontFamily":"Avenir Roman","fontWeight":"400","fontStyle":"normal","fontStretch":"normal","src":{"file":".\/assets\/fonts\/avenir\/Avenir-Roman.woff2"}}]}]}},"styles":{"blocks":{"core\/image":{"border":{"color":true,"style":true,"width":true,"radius":"7px"}}}}}
+{
+    "$schema": "https:\/\/schemas.wp.org\/trunk\/theme.json",
+    "version": 2,
+    "settings": {
+        "appearanceTools": true,
+        "border": {
+            "color": true,
+            "radius": true,
+            "width": true,
+            "style": true
+        },
+        "color": {
+            "link": true,
+            "duotone": "",
+            "palette": [
+                {
+                    "color": "#dd3333",
+                    "name": "red",
+                    "slug": "red"
+                },
+                {
+                    "color": "#000000",
+                    "name": "black",
+                    "slug": "black"
+                }
+            ],
+            "gradients": ""
+        },
+        "layout": {
+            "contentSize": "100%",
+            "wideSize": "1360px"
+        },
+        "typography": {
+            "fontSizes": [
+                {
+                    "slug": "small",
+                    "size": "11px",
+                    "name": "Small"
+                },
+                {
+                    "slug": "medium",
+                    "size": "16px",
+                    "name": "Medium"
+                },
+                {
+                    "slug": "large",
+                    "size": "24px",
+                    "name": "Large"
+                },
+                {
+                    "slug": "x-large",
+                    "size": "36px",
+                    "name": "X Large"
+                }
+            ],
+            "fontFamilies": [
+                {
+                    "fontFamily": "\"Bestermind Regular\", serif",
+                    "name": "Bestermind Regular",
+                    "slug": "bestermind-regular",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Bestermind Regular",
+                            "fontWeight": "400",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "src": {
+                                "file": ".\/assets\/fonts\/bestermind\/BestermindRegular.woff"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "\"Avenir Roman\", serif",
+                    "name": "Avenir Roman",
+                    "slug": "avenir-roman",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Avenir Roman",
+                            "fontWeight": "400",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "src": {
+                                "file": ".\/assets\/fonts\/avenir\/Avenir-Roman.woff2"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "styles": {
+        "blocks": {
+            "core\/image": {
+                "border": {
+                    "color": true,
+                    "style": true,
+                    "width": true,
+                    "radius": "0px"
+                }
+            }
+        }
+    }
+}

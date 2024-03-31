@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		observeSlideChildren: true,
 		slideToClickedSlide: true,
 		updateOnWindowResize: true,
-		slidesPerView: 4,
 		spaceBetween: 30,
 		autoHeight: true,
 		loop: true,
