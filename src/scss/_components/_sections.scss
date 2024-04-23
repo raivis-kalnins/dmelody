@@ -108,6 +108,20 @@ body {
 				}
 			}
 		}
+
+		&__blog {
+
+			.wp-block-query {
+
+				ul.wp-block-post-template {
+
+					li {
+						max-width: 20%;
+						padding: 0;
+					}
+				}
+			}
+		}
 	}
 
 	.wp-block-dp-column {

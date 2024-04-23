@@ -37,7 +37,7 @@
 		<!-- wp:dp/column {"width":"full"} -->
 		<div class="wp-block-dp-column align-self-center" style="">
 			<!-- wp:paragraph {"align":"center"} -->
-			<p class="has-text-align-center">© <em>2023</em> dp. All Rights Reserved. | <a rel="noreferrer noopener" href="https://t-f-a.co.uk/" target="_blank">Design by dp</a></p>
+			<p class="has-text-align-center">© <em>2023</em> D Melody. All Rights Reserved. | <a rel="noreferrer noopener" href="https://digitalpulse.click" target="_blank">Design by DigitalPulse</a></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:dp/column -->
