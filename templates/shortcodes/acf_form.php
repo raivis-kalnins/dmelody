@@ -335,7 +335,7 @@ if ( !empty($formItems) ) :
 			// phone valid
 			if ( $phone == 'true' ) {
 				$phone_post = stripslashes($_POST['phone'] ?? '');
-				if( empty($phone_post) || strlen($phone_post) < 7 || !preg_match("/^\+[0-9]*$/",$phone_post) ) {
+				if( empty($phone_post) || strlen($phone_post) < 7 || !preg_match("/^[\+0-9\-\(\)\s]*$/",$phone_post) ) {
 					$phoneErr = '<em class="acf-form-error">Invalid Phone: We want phone with more than 9 numbers!</em>';
 					$phone = stripslashes($_POST['phone'] ?? '');
 				} else {
