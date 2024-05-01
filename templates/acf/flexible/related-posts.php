@@ -35,7 +35,7 @@
 						<div class="h3"><a href="<?php echo get_permalink( $post_id ); ?>"><?php echo esc_html( $title ); ?></a></div>
 						<div class="cat-list"><?php if ($cats) { echo '<i class="cat-ico"></i> '; echo join(' ', array_map(function($cats) { echo '<a href="' . esc_url( get_permalink( $post_id ) ) . '">' . $cats->name . '</a> '; }, get_the_category())); } ?></div>
 						<?php if (!empty($text)): ?><p><?=$text?></p><?php endif; ?>
-						<?php if ($read_more == 'true') : ?><a href="<?php echo get_permalink( $post_id ); ?>" class="btnon btn btn-more"><?php if (!empty($read_more_txt)): ?><?=$read_more_txt?><?php else: ?>Learn more<?php endif; ?></a><?php endif; ?>
+						<?php if ($read_more == 'true') : ?><a href="<?php echo get_permalink( $post_id ); ?>" class="btnon btn btn-more"><?php if (!empty($read_more_txt)): ?><?=$read_more_txt?><?php else: ?><?php if (get_locale() == 'lv') { ?>Lasīt vēl<?php } if (get_locale() == 'en_GB') { ?>Read more<?php } ?><?php endif; ?></a><?php endif; ?>
 					</div>
 					<a href="<?php echo get_permalink( $post_id ); ?>" class="faux-link__overlay-link"></a>
 				</div>
