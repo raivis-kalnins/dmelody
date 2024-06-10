@@ -7,6 +7,18 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 $options_builder = new FieldsBuilder( 'custom-options' );
 $options_builder
 
+	// Languages
+	->addTab('Languages', ['placement' => 'left','wrapper' => ['width' => 5]])
+	->addTrueFalse('language_flags', ['label' => 'Show Flags','required' => 0,'default_value' => 1,'ui' => 1])
+	->addTrueFalse('language_names', ['label' => 'Show Names','required' => 0,'default_value' => 0,'ui' => 1])
+	->addTrueFalse('language_dropdowns', ['label' => 'Show Dropdown','required' => 0,'default_value' => 0,'ui' => 1])
+
+	// WooCommerce
+	->addTab('WooCommerce', ['placement' => 'left','wrapper' => ['width' => 5]])
+	->addText('shop_title')
+	->addText('acf_single_price_info', ['label' => 'Single Price Information'])
+	->addTrueFalse('wishlist', ['label' => 'Show Wishlist','required' => 0,'default_value' => 0,'ui' => 1])
+
 	// Testimonials
 	->addTab('Testimonials', ['placement' => 'left','wrapper' => ['width' => 5]])
 	->addRepeater('testimonials_list', ['layout' => 'block', 'label' => 'Testimonial item', 'wrapper' => ['width' => 100]])
@@ -14,7 +26,7 @@ $options_builder
 		->addText('testimonial_name', ['layout' => 'block', 'label' => 'Name', 'wrapper' => ['width' => 20]])
 		->addText('testimonial_role', ['layout' => 'block', 'label' => 'Role', 'wrapper' => ['width' => 20]])
 		->addImage('testimonial_image', ['return_format' => 'id', 'wrapper' => ['width' => 20], 'label' => 'Image'])
-	->endRepeater()
+	->endRepeater()	
 
 	// Sectors & Countries
 	->addTab('Sectors & Countries', ['placement' => 'left','wrapper' => ['width' => 5]])
@@ -70,6 +82,27 @@ $options_builder
 		->addColorPicker('duo_code_1', ['layout' => 'block', 'label' => 'Colour Duotone 1 code', 'wrapper' => ['width' => 30]])
 		->addColorPicker('duo_code_2', ['layout' => 'block', 'label' => 'Colour Duotone 2 code', 'wrapper' => ['width' => 30]])
 	->endRepeater()
+	
+	// Swiper Slider
+	->addTab('Swiper Slider', ['placement' => 'left','wrapper' => ['width' => 5]])
+	->addRepeater('swiper_list', ['layout' => 'block', 'label' => 'Swiper Slider list', 'wrapper' => ['width' => 100]])
+		->addColorPicker('swiper_col', ['layout' => 'block', 'label' => 'Button Colour / Arr&Pagin', 'wrapper' => ['width' => 20]])
+		->addColorPicker('swiper_hov_col', ['layout' => 'block', 'label' => 'Button Hover Col', 'wrapper' => ['width' => 20]])
+		->addNumber('swiper_items', ['label' => 'Visible Items','required' => 0,'default_value' => '4','min' => '2','max' => '20','step' => '1', 'wrapper' => ['width' => 20]])
+		->addNumber('swiper_items_tab', ['label' => 'Visible Tab Items','required' => 0,'default_value' => '2','min' => '1','max' => '10','step' => '1', 'wrapper' => ['width' => 20]])
+		->addNumber('swiper_items_mob', ['label' => 'Visible Mob Items','required' => 0,'default_value' => '1','min' => '1','max' => '10','step' => '1', 'wrapper' => ['width' => 20]])
+		->addText('swiper_parent', ['layout' => 'block', 'label' => 'Parent Item','default_value' => '#news_loop.swiper ul.wp-block-query', 'wrapper' => ['width' => 33]])
+		->addText('swiper_child', ['layout' => 'block', 'label' => 'Child Items','default_value' => '#news_loop.swiper ul.wp-block-query li.post', 'wrapper' => ['width' => 33]])
+	->endRepeater()
+
+	// Scss Compiler
+	->addTab('SCSS Theme custom style', ['placement' => 'left','wrapper' => ['width' => 5]])
+	->addTextarea('scss_block', ['label' => 'SCSS Cmpiler to dist minify','wrapper' => ['width'=>100]])
+
+	// Meta Header & Footer
+	->addTab('Header & Footer', ['placement' => 'left','wrapper' => ['width' => 5]])
+	->addTextarea('meta_header', ['label' => 'Meta Header','wrapper' => ['width'=>100]])
+	->addTextarea('sc_footer', ['label' => 'Scripts Footer','wrapper' => ['width'=>100]])
 
 	// Contact Forms
 	->addTab('Contact Forms', ['label' => 'Contact Forms','placement' => 'left'])
@@ -138,6 +171,7 @@ $options_builder
 		->addText('time_label', ['label' => 'Time','default_value' => 'Time:','wrapper' => ['width' => 16.5]])
 		->addText('url_label', ['label' => 'Your Website','default_value' => 'Your Website:','wrapper' => ['width' => 16.5]])
 		->addText('range_label', ['label' => 'Budget','default_value' => 'Budget £ or €:','wrapper' => ['width' => 16.5]])
+		->addText('accept_label', ['label' => 'Accept txt','default_value' => 'By sending your message you agree to','wrapper' => ['width' => 16.5]])
 		->addText('agree_label', ['label' => 'Agree','default_value' => 'Agree','wrapper' => ['width' => 16.5]])
 		->addText('located_label', ['label' => 'Located','default_value' => 'Are you located in UK or EU?','wrapper' => ['width' => 16.5]])
 		// Form Replay Text
@@ -164,6 +198,15 @@ $options_builder
 			->conditional('recaptcha', '==', '1')
 	->endRepeater()
 
+	// Extra SEO Filter options for generater URl's
+	->addTab('SEO Filter Options', ['label' => 'SEO','placement' => 'left'])
+	->addRepeater('tfa_seo_list', ['layout' => 'block', 'label' => 'SEO TFA custom Meta & H1 / Desc', 'wrapper' => ['width' => 100]])
+		->addText('tfa_seo_url', ['layout' => 'block', 'wrapper' => ['width' => 33.3], 'label' => 'TFA SEO URL'])
+		->addText('tfa_meta_title', ['layout' => 'block', 'wrapper' => ['width' => 33.3], 'label' => 'TFA SEO Meta Title'])
+		->addText('tfa_seo_title', ['layout' => 'block', 'wrapper' => ['width' => 33.3], 'label' => 'TFA SEO H1 Title'])
+		->addWysiwyg('tfa_seo_desc', ['layout' => 'block', 'wrapper' => ['width' => 100], 'label' => 'TFA SEO Description '])
+	->endRepeater()
+
 	// Load More Anything options
 	->addTab('Load More Item', ['placement' => 'top','wrapper' => ['width' => 5]])
 	->addRepeater('loadmore_list', ['layout' => 'block', 'label' => 'Load More Item', 'wrapper' => ['width' => 100]])
@@ -177,85 +220,6 @@ $options_builder
 		->addText('loadmore_class', ['layout' => 'block', 'label' => 'Button class','default_value' => 'btn btn-primary', 'wrapper' => ['width' => 25]])
 		->addText('loadmore_name', ['layout' => 'block', 'label' => 'Button text','default_value' => 'Load More', 'wrapper' => ['width' => 25]])
 	->endRepeater()
-
-	// Swiper Slider
-	->addTab('Swiper Sliders', ['placement' => 'left','wrapper' => ['width' => 5]])
-	->addRepeater('swiper_list', ['layout' => 'block', 'label' => 'Swiper Slider list', 'wrapper' => ['width' => 100]])
-		->addColorPicker('swiper_col', ['layout' => 'block', 'label' => 'Button Colour / Arr&Pagin', 'wrapper' => ['width' => 20]])
-		->addColorPicker('swiper_hov_col', ['layout' => 'block', 'label' => 'Button Hover Col', 'wrapper' => ['width' => 20]])
-		->addNumber('swiper_items', ['label' => 'Visible Items','required' => 0,'default_value' => '4','min' => '2','max' => '20','step' => '1', 'wrapper' => ['width' => 20]])
-		->addNumber('swiper_items_tab', ['label' => 'Visible Tab Items','required' => 0,'default_value' => '2','min' => '1','max' => '10','step' => '1', 'wrapper' => ['width' => 20]])
-		->addNumber('swiper_items_mob', ['label' => 'Visible Mob Items','required' => 0,'default_value' => '1','min' => '1','max' => '10','step' => '1', 'wrapper' => ['width' => 20]])
-		->addText('swiper_parent', ['layout' => 'block', 'label' => 'Parent Item','default_value' => '#news_loop.swiper ul.wp-block-query', 'wrapper' => ['width' => 33]])
-		->addText('swiper_child', ['layout' => 'block', 'label' => 'Child Items','default_value' => '#news_loop.swiper ul.wp-block-query li.post', 'wrapper' => ['width' => 33]])
-	->endRepeater()
-
-	/**
-	 * Blog & Woo filters/sort
-	 */
-
-	// Blog Filters
-	->addTab('Blog/Woo filters', ['label' => 'Blog & Woo filters / Searchbox'])
-	->addTrueFalse('filter_posts', ['label' => 'Blog Filter','required' => 0,'default_value' => 1,'ui' => 1,'wrapper' => ['width' => 100],'instructions' => 'On/Off Blog Posts filter block'])
-	->addTrueFalse('filter_posts_cat', ['label' => 'Posts Cat','required' => 0,'default_value' => 1,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_posts_old', ['label' => 'Posts Old/New','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_posts_year', ['label' => 'Posts Year','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_posts_tag', ['label' => 'Posts Tag','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_posts_title', ['label' => 'Posts A/Z','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_posts_search', ['label' => 'Search(Ajax)','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 28]])
-
-	// WooCommerce Filters
-	->addTrueFalse('filter_prod', ['label' => 'Shop Filter','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 100],'instructions' => 'On/Off WooCommerce Shop filter block'])
-	->addTrueFalse('filter_prod_cat', ['label' => 'Prod Cat','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_prod_tag', ['label' => 'Prod Tag','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_prod_color', ['label' => 'Prod Colour','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_prod_price', ['label' => 'Price(range)','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_prod_material', ['label' => 'Prod Material','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_prod_origin', ['label' => 'Prod Origin','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_prod_brand', ['label' => 'Prod Brand','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_prod_weight', ['label' => 'Prod Weight','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_prod_size', ['label' => 'Prod Size','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_prod_shipping', ['label' => 'Prod Shipping','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_prod_search', ['label' => 'Search(Ajax)','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('sort_prod', ['label' => 'Prod Sort','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	->addTrueFalse('filter_prod_tech', ['label' => 'Tech Details - PC: Processor, Display, RAM, Storage, Processor | Cars: engine, size etc','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 40]])
-
-	// WooCommerce Sort Products
-	// ->addTrueFalse('sort_prod_price_low', ['label' => 'Price(low/high)','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	// ->addTrueFalse('sort_prod_popular', ['label' => 'Prod Popular','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	// ->addTrueFalse('sort_prod_latest', ['label' => 'Prod Latest','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	// ->addTrueFalse('sort_prod_id', ['label' => 'Prod ID','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	// ->addTrueFalse('sort_prod_title', ['label' => 'Prod A/Z','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-	// ->addTrueFalse('sort_prod_rating', ['label' => 'Prod Rating','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 12]])
-
-	// WooCommerce Options
-	->addTab('WooCommerce', ['placement' => 'left','wrapper' => ['width' => 5]])
-	->addText('shop_title')
-	->addTrueFalse('wishlist', ['label' => 'Show Wishlist','required' => 0,'default_value' => 0,'ui' => 1])
-
-	// Languages
-	->addTab('Languages', ['label' => 'Language Menu Bar','placement' => 'left','wrapper' => ['width' => 5]])
-	->addTrueFalse('language_flags', ['label' => 'Show Flags','required' => 0,'default_value' => 1,'ui' => 1])
-	->addTrueFalse('language_names', ['label' => 'Show Names','required' => 0,'default_value' => 0,'ui' => 1])
-	->addTrueFalse('language_dropdowns', ['label' => 'Show Dropdown','required' => 0,'default_value' => 0,'ui' => 1])
-
-	// Extra SEO Filter options for generater URl's
-	->addTab('SEO Filter Options', ['label' => 'SEO Custom Options','placement' => 'left'])
-	->addRepeater('dp_seo_list', ['layout' => 'block', 'label' => 'SEO DP custom Meta & H1 / Desc', 'wrapper' => ['width' => 100]])
-		->addText('dp_seo_url', ['layout' => 'block', 'wrapper' => ['width' => 33.3], 'label' => 'DP SEO URL'])
-		->addText('dp_meta_title', ['layout' => 'block', 'wrapper' => ['width' => 33.3], 'label' => 'DP SEO Meta Title'])
-		->addText('dp_seo_title', ['layout' => 'block', 'wrapper' => ['width' => 33.3], 'label' => 'DP SEO H1 Title'])
-		->addWysiwyg('dp_seo_desc', ['layout' => 'block', 'wrapper' => ['width' => 100], 'label' => 'DP SEO Description '])
-	->endRepeater()
-
-	// Meta Header & Footer
-	->addTab('Header & Footer', ['placement' => 'left','wrapper' => ['width' => 5]])
-	->addTextarea('meta_header', ['label' => 'Meta Header','wrapper' => ['width'=>100]])
-	->addTextarea('sc_footer', ['label' => 'Scripts Footer','wrapper' => ['width'=>100]])
-
-	// Scss Compiler
-	->addTab('SCSS Theme custom style', ['placement' => 'left','wrapper' => ['width' => 5]])
-	->addTextarea('scss_block', ['label' => 'SCSS Cmpiler to dist minify','wrapper' => ['width'=>100]])
 
 ->setLocation('options_page', '==', 'acf-options');
 

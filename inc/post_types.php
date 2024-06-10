@@ -92,3 +92,46 @@ function create_post_type_events() {
     ));
 }
 add_action('init', 'create_post_type_events');
+
+//////////////////////////////////////////////////////////////////
+// Custom Post type songs - PHP Templates + Shortcodes
+//////////////////////////////////////////////////////////////////
+function create_post_type_songs() {
+    register_taxonomy_for_object_type('category', 'songs'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'songs');
+    register_post_type('songs',
+        array(
+        'labels' => array(
+            'name' => __('Songs', 'dp'),
+            'singular_name' => __('Songs', 'dp'),
+            'add_new' => __('Add New', 'dp'),
+            'add_new_item' => __('Add New songs Post', 'dp'),
+            'edit' => __('Edit', 'dp'),
+            'edit_item' => __('Edit songs Post', 'dp'),
+            'new_item' => __('New songs Post', 'dp'),
+            'view' => __('View songs Post', 'dp'),
+            'view_item' => __('View songs Post', 'dp'),
+            'search_items' => __('Search songs Post', 'dp'),
+            'not_found' => __('No songs Posts found', 'dp'),
+            'not_found_in_trash' => __('No songs Posts found in Trash', 'dp')
+        ),
+        'hierarchical' => true,
+        'publicly_queryable' => true,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 5,
+        'show_in_admin_bar' => true,
+        //'show_in_nav_menus' => true,
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable'  => true,
+        'capability_type'     => 'post',
+        'show_in_rest' => true,
+        'supports' => array('title','editor','thumbnail','page-attributes'),
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array('post_tag','category')
+    ));
+}
+add_action('init', 'create_post_type_songs');

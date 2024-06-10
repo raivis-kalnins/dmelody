@@ -4,7 +4,7 @@
 /**
  * Add short code form loop [acf-form]
  */
-$formItems = get_fields('options')['form_field_list'] ?? '';
+$formItems = get_fields('options')['form_field_list'];
 
 if ( !empty($formItems) ) :
 
@@ -12,18 +12,18 @@ if ( !empty($formItems) ) :
 
 		// Variables and set to empty values
 		$full_name = $first_name = $last_name = $email =  $phone =  $subject = $company = $country =  $sectors =  $url =  $message =  $located  = $file =  $agree = '';
-		$full_nameErr = $first_nameErr = $last_nameErr = $emailErr =  $phoneErr =  $subjectErr = $companyErr =  $countryErr =  $sectorsErr = $dateErr = $adultsErr = $kidsErr = $timeErr =  $urlErr =  $messageErr =  $fileErr =  $rangeErr = $locatedErr = $locatedErrInfo = $agreeErr = '';
-		$full_name_tomail = $first_name_tomail = $last_name_tomail = $email_tomail = $phone_tomail = $subject_tomail = $company_tomail = $country_tomail = $sectors_tomail = $date_tomail = $date_tomail = $date_tomail = $time_tomail = $url_tomail = $range_tomail = $located_tomail = $message_tomail = $file_tomail = $agree_tomail = '';
+		$full_nameErr = $first_nameErr = $last_nameErr = $emailErr =  $phoneErr =  $subjectErr = $companyErr =  $countryErr =  $sectorsErr = $dateErr = $timeErr =  $urlErr =  $messageErr =  $fileErr =  $rangeErr = $locatedErr = $locatedErrInfo = $agreeErr = '';
+		$full_name_tomail = $first_name_tomail = $last_name_tomail = $email_tomail = $phone_tomail = $subject_tomail = $company_tomail = $country_tomail = $sectors_tomail = $date_tomail = $time_tomail = $url_tomail = $range_tomail = $located_tomail = $message_tomail = $file_tomail = $agree_tomail = '';
 		$captcha_class = $captcha_class ?? '';
 		$response_txt = $response_txt ?? '';
 
 		// Form attributes
 		$current_url = home_url($_SERVER['REQUEST_URI']); //var_dump($current_url);
 		$site_url = site_url();
-		$formLang = $formItem['form_lang'] ?? '';
+		$formLang = $formItem['form_lang'] ?? ''; 
 		$form_title = $formItem['form_title'] ?? '';
 		$form_to_emails = $formItem['form_to_emails'] ?? '';
-		$form_short = $formItem['form_short'] ?? '';
+		$form_short = $formItem['form_short'] ?? ''; //var_dump($form_short);
 		$form_steps = $formItem['form_steps'] ?? '';
 		$file_max = $formItem['file_max'] ?? '';
 		$file_formats = $formItem['file_formats'] ?? '';
@@ -55,8 +55,6 @@ if ( !empty($formItems) ) :
 		$message_pl = $formItem['message_placeholder'] ?? '';
 		$file_pl = $formItem['file_placeholder'] ?? '';
 		$date_pl = $formItem['date_placeholder'] ?? '';
-		$adults_pl = $formItem['adults_placeholder'] ?? '';
-		$kids_pl = $formItem['kids_placeholder'] ?? '';
 		$time_pl = $formItem['time_placeholder'] ?? '';
 		$url_pl = $formItem['url_placeholder'] ?? '';
 		$range_pl = $formItem['range_placeholder'] ?? '';
@@ -77,15 +75,14 @@ if ( !empty($formItems) ) :
 		$label_message = $formItem['message_label'] ?? '';
 		$label_file = $formItem['file_label'] ?? '';
 		$label_date = $formItem['date_label'] ?? '';
-		$label_adults = $formItem['adults_label'] ?? '';
-		$label_kids = $formItem['kids_label'] ?? '';
 		$label_time = $formItem['time_label'] ?? '';
 		$label_url = $formItem['url_label'] ?? '';
 		$label_range = $formItem['range_label'] ?? '';
 		$label_agree = $formItem['agree_label'] ?? '';
+		$label_accept = $formItem['accept_label'] ?? '';
 		$label_located = $formItem['located_label'] ?? '';
 
-		$white_label = $full_name_label = $first_name_label = $last_name_label = $email_label = $phone_label = $subject_label = $company_label = $country_label = $sectors_label = $message_label = $file_label = $date_label = $time_label = $url_label = $range_label = $located_label = '';
+		$full_name_label = $first_name_label = $last_name_label = $email_label = $phone_label = $subject_label = $company_label = $country_label = $sectors_label = $message_label = $file_label = $date_label = $time_label = $url_label = $range_label = $located_label = '';
 
 		if ( $labels == "true" ) {
 
@@ -142,7 +139,7 @@ if ( !empty($formItems) ) :
 		$email_field = $email_field ?? '';
 		if ( $email == 'true' ) {
 			$get_email = isset($_GET['email']) ? $_GET['email']: '';
-			$email_field = '<div class="col-12">'.$email_label.'<input type="email" name="email" placeholder="'.$email_pl.'" title="email" class="required" aria-required="true" required value="'.$get_email.'" autocomplete="email" /></div>';
+			$email_field = '<div class="col-lg-6">'.$email_label.'<input type="email" name="email" placeholder="'.$email_pl.'" title="email" class="required" aria-required="true" required value="'.$get_email.'" autocomplete="email" /></div>';
 		}
 		
 		// phone
@@ -150,7 +147,7 @@ if ( !empty($formItems) ) :
 		$phone_field = $phone_field ?? '';
 		if ( $phone == 'true' ) {
 			$get_phone = isset($_GET['phone']) ? $_GET['phone']: '';
-			$phone_field = '<div class="col-12">'.$phone_label.'<input type="tel" name="phone" placeholder="'.$phone_pl.'" title="phone" class="required" aria-required="true" required value="'.$get_phone.'" onkeydown="return isNumber(event); validate(event,"char","190","187",".errorMessage", 0);" autocomplete="phone" /></div>'; 
+			$phone_field = '<div class="col-lg-6">'.$phone_label.'<input type="tel" name="phone" placeholder="'.$phone_pl.'" title="phone" class="required" aria-required="true" required value="'.$get_phone.'" onkeydown="return isNumber(event); validate(event,"char","190","187",".errorMessage", 0);" autocomplete="phone" /></div>'; 
 		}
 		// subject
 		$subject = $formItem['subject'] ?? '';
@@ -246,7 +243,7 @@ if ( !empty($formItems) ) :
 		$message_field = $message_field ?? '';
 		if ( $message == 'true' ) {
 			$get_message = isset($_GET['message']) ? $_GET['message']: '';
-			$message_field = '<div class="col-12">'.$message_label.'<br><textarea cols="40" rows="10" name="message" placeholder="'.$message_pl.'" title="message" class="required acf-textarea" aria-required="true" required value="'.$get_message.'" autocomplete="message"></textarea></div>'; 
+			$message_field = '<div class="col-12">'.$message_label.'<br><textarea cols="20" rows="5" name="message" placeholder="'.$message_pl.'" title="message" class="required acf-textarea" aria-required="true" required value="'.$get_message.'" autocomplete="message"></textarea></div>'; 
 		}
 		
 		// file
@@ -260,7 +257,7 @@ if ( !empty($formItems) ) :
 		$agree = $formItem['agree'] ?? '';
 		$agree_field = $agree_field ?? '';
 		if ( $agree == 'true' ) {
-			$agree_field = '<div class="col-12"><span class="acf-checkbox"><div class="acf-checkbox-item"><input type="checkbox" name="agree" title="Agree Policy" class="required" value="0" /><em></em><span class="acf-checkbox-item-label">I accept the <a href="'.$site_url.'/privacy-policy/" target="_blank">Privacy Policy</a></span></div></span></div>'; 
+			$agree_field = '<div class="col-12"><span class="acf-checkbox"><div class="acf-checkbox-item"><input type="checkbox" name="agree" title="Agree Policy" class="required" value="0" /><em></em><span class="acf-checkbox-item-label acf-checkbox-item-label--accept">'.$label_accept.' <a href="'.$site_url.'/privacy-policy/" target="_blank">Privacy Policy</a></span></div></span></div><div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>'; 
 		}
 
 		if ( $recaptcha == 'true' ) {
@@ -604,7 +601,7 @@ if ( !empty($formItems) ) :
 				</div>
 			</form>'.$mailSent.$response_txt.$captcha_script;
 
-			$eachformLang = '<div class="short-component acf-form acf-form-'.$formLang.'">'.$loop.'</div>'; // print_r($eachformLang);
+			$eachformLang = '<div class="short-component acf-form acf-form-'.$formLang.'">'.$loop.'</div>'; //print_r($eachformLang);
 
 			add_shortcode( 'acf-form_'.$formLang, function() use ($eachformLang) {
 				return $eachformLang;

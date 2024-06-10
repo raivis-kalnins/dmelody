@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/The-Fuel-Agency/dp.git"
+    "url": "git+https://github.com/raivis-kalnins/dp.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/The-Fuel-Agency/dp/issues"
+    "url": "https://github.com/raivis-kalnins/dp/issues"
   },
-  "homepage": "https://github.com/The-Fuel-Agency/dp#readme",
+  "homepage": "https://github.com/raivis-kalnins/dp#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.1",
     "assert": "^2.0.0",
