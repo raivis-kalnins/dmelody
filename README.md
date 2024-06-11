@@ -1,7 +1,7 @@
 # dmelody
-D Melody WP Theme
+D-Melody WP Theme
 
-P Base React Theme v1.0 GUIDE
+WP Base React Theme v1.0 GUIDE
 =================================
 New DP wordpress projects should start from this theme.
 
