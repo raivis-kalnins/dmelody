@@ -2,12 +2,12 @@
 /*
 *  Create Shortcode to Display Components Post Types [com id=14]
 */
-// function dp_shortcode_com( $atts ) {
-// 	$atts = shortcode_atts( array( 'id' => null, ), $atts,'com' );
-// 	$content_post = get_post( $atts['id'] );
-// 	$blocks = $content_post->post_content ?? '';
-// 	return '<div class="short-component">'. do_blocks( $blocks ).'</div>';
-// }
+function dp_shortcode_com( $atts ) {
+	$atts = shortcode_atts( array( 'id' => null, ), $atts,'com' );
+	$content_post = get_post( $atts['id'] );
+	$blocks = $content_post->post_content ?? '';
+	return '<div class="short-component">'. do_blocks( $blocks ).'</div>';
+}
 // add_shortcode( 'com', 'dp_shortcode_com' ); => only if need specific large reusable sections
 
 /*

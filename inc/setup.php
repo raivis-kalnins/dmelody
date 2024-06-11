@@ -52,14 +52,9 @@ if ( ! function_exists( 'dp_support' ) ) :
 endif;
 add_action( 'after_setup_theme', 'dp_support', 9 );
 
-// Add the child theme patterns if they exist.
-if ( file_exists( get_stylesheet_directory() . '/inc/patterns.php' ) ) {
-	require_once get_stylesheet_directory() . '/inc/patterns.php';
-}
-
 // Include Woocommerce
 if (class_exists('Woocommerce')) {
-	require get_stylesheet_directory() . '/inc/woofunctions.php';
+	require get_stylesheet_directory() . '/inc/woo/functions.php';
 }
 
 /**
@@ -298,6 +293,17 @@ if ( ! function_exists( 'dp_setup' ) ) :
 	add_action( 'after_setup_theme', 'dp_setup' );
 endif;
 
+ /**
+* Change number of products that are displayed per page (shop page "Covers")
+*/
+function q_loop_shop_per_page( $cols ) {
+	// $cols contains the current number of products per page based on the value stored on Options -> Reading
+	// Return the number of products you wanna show per page.
+	$cols = 8;
+	return $cols;
+}
+add_filter( 'loop_shop_per_page', 'q_loop_shop_per_page', 20 );
+
 /**
  * Custom Admin Logo
  */
@@ -328,6 +334,24 @@ function cf7_select_country($tag) {
 add_filter( 'wpcf7_form_tag', 'cf7_select_country', 10, 2);
 
 remove_action( 'wpcf7_swv_create_schema', 'wpcf7_swv_add_select_enum_rules', 20, 2 );
+
+/**
+ * Conditionally Override Yoast SEO Breadcrumb Trail
+ * http://plugins.svn.wordpress.org/wordpress-seo/trunk/frontend/class-breadcrumbs.php
+ * -----------------------------------------------------------------------------------
+ */
+function override_yoast_breadcrumb_trail( $links ) {
+	global $post;
+	if ( is_home() || is_singular( 'post' ) || is_archive() && !is_woocommerce() ) {
+		$breadcrumb[] = array(
+			'url' => get_permalink( get_page_by_title('blog') ),
+			'text' => 'Blog',
+		);
+		array_splice( $links, 1, -2, $breadcrumb );
+	}
+	return $links;
+}
+add_filter( 'wpseo_breadcrumb_links', 'override_yoast_breadcrumb_trail' );
 
 /**
  * Contact Form 7 custom Sectors select list
@@ -380,37 +404,6 @@ add_action('init', 'removeHeadLinks');
 
 // Hide H1 title from Shop archive page
 add_filter( 'woocommerce_show_page_title', '__return_false' );
-
-// Ovveride Shop archive page template
-// function woocommerce_archive_template( $template ) {
-
-//     if ( is_woocommerce() && is_archive() ) {
-//         $new_template = get_stylesheet_directory() . '/woocommerce/archive-product.php';
-//         if ( !empty( $new_template ) ) {
-//             return $new_template;
-//         }
-//     }
-//     return $template;
-// }
-// add_filter( 'template_include', 'woocommerce_archive_template', 99 );
-
-/**
- * Register DP Theme patterns
- */
-register_block_pattern_category(
-	'dp-patterns',
-	array( 'label' => __( '| * DP Patterns * |', 'dp' ) )
-);
-
-/**
- * Hide from admin menu
- */
-function remove_item_from_menu() {
-	//remove_menu_page( 'edit.php' ); // removes blog posts
-	remove_menu_page( 'edit-comments.php' ); // removes comment menu
-	remove_menu_page( 'edit.php?post_type=acf-field-group' ); // removes acf
-}
-add_action( 'admin_init', 'remove_item_from_menu' );
 
 /**
  * Post excerp limit
@@ -477,11 +470,38 @@ add_filter('render_block_data', function($parsed_block) {
 remove_filter( 'render_block', 'wp_render_layout_support_flag', 10, 2 );
 remove_filter( 'render_block', 'gutenberg_render_layout_support_flag', 10, 2 );
 
+// Add the child theme patterns if they exist.
+// if ( file_exists( get_stylesheet_directory() . '/inc/patterns.php' ) ) {
+// 	require_once get_stylesheet_directory() . '/inc/patterns.php';
+// }
+
 /**
  * Register DP Theme patterns categories
  */
-register_block_pattern_category('dp-patterns', array( 'label' => __( '| * DP Custom * |', 'dp' )));
-register_block_pattern_category('dp-patterns-main', array( 'label' => __( '| * DP Main * |', 'dp' )));
+
+
+/**
+ * Register pattern categories.
+ */
+
+ if ( ! function_exists( 'dp_pattern_categories' ) ) :
+	/**
+	 * Register pattern categories
+	 *
+	 */
+	function dp_pattern_categories() {
+		register_block_pattern_category('dp-patterns', array( 'label' => __( '| * DP Custom * |', 'dp' )));
+		register_block_pattern_category('dp-patterns-main', array( 'label' => __( '| * DP Main * |', 'dp' )));
+	}
+endif;
+
+add_action( 'init', 'dp_pattern_categories' );
+
+// Add support for block styles.
+add_theme_support( 'wp-block-styles' );
+
+// Enqueue editor styles.
+add_editor_style( 'style.css' );
 
 /**
  * Register DP Default Menus
@@ -505,6 +525,7 @@ function register_navwalker(){
 	require_once get_template_directory() . '/inc/wp-nav-walker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
+
 
 /**
  * Custom CSS Theme Options Visual Code Editor
@@ -537,7 +558,6 @@ function custom_admin_js() {
 				}
 			</script>";
 }
-
 if( function_exists('acf_add_options_page') ) {
 	add_action('admin_footer', 'custom_admin_js');
 }
@@ -553,31 +573,10 @@ function add_custom_sorting_options( $options ){
 add_filter( 'woocommerce_catalog_orderby', 'add_custom_sorting_options' );
 
 function combine_json_files_on_setup() {
-
     function combine_json_files( $input_files = array(), $output_path ) {
-
         $contents = [];
-
         foreach ( $input_files as $input_file ) {
-			
-            // Load file contents
-            $file_contents = file_get_contents( $input_file );
-            
-            // Check if file contents are successfully loaded
-            if ($file_contents === false) {
-                continue; 
-            }
-
-            // Decode the JSON string
-            $json_data = json_decode($file_contents, true);
-
-            // Check if JSON decoding was successful
-            if ($json_data === null && json_last_error() !== JSON_ERROR_NONE) {
-                continue;
-            }
-
-            // Merge the arrays
-            $contents = array_replace_recursive($contents, $json_data);
+            $contents = array_replace_recursive( $contents, json_decode( file_get_contents( $input_file ), true ) );
         }
         file_put_contents( $output_path, json_encode( $contents, JSON_PRETTY_PRINT ) );
     }
@@ -593,3 +592,53 @@ function combine_json_files_on_setup() {
     );
 }
 add_action( 'after_setup_theme', 'combine_json_files_on_setup' );
+
+/**
+ * Display Variations as Radio Buttons
+ */
+function dp_radio_variations( $html, $args ) {
+
+	// in wc_dropdown_variation_attribute_options() they also extract all the array elements into variables
+	$options   = $args[ 'options' ];
+	$product   = $args[ 'product' ];
+	$attribute = $args[ 'attribute' ];
+	$name      = $args[ 'name' ] ? $args[ 'name' ] : 'attribute_' . sanitize_title( $attribute );
+	$id        = $args[ 'id' ] ? $args[ 'id' ] : sanitize_title( $attribute );
+	$class     = $args[ 'class' ];
+
+	if( empty( $options ) || ! $product ) {
+		return $html;
+	}
+	
+	// HTML for our radio buttons
+	$radios = '<div class="dp-variation-radios" id="attribute_' .$id.'">';
+
+	// taxonomy-based attributes
+	if( taxonomy_exists( $attribute ) ) {
+
+		$terms = wc_get_product_terms(
+			$product->get_id(),
+			$attribute,
+			array(
+				'fields' => 'all',
+			)
+		);
+
+		foreach( $terms as $term ) {
+			if( in_array( $term->slug, $options, true ) ) {
+				$radios .= "<input type=\"radio\" id=\"{$name}-{$term->slug}\" name=\"{$name}\" value=\"{$term->slug}\"" . checked( $args[ 'selected' ], $term->slug, false ) . "><label for=\"{$name}-{$term->slug}\">{$term->name}</label><br />";
+			}
+		}
+	// individual product attributes
+	} else {
+		foreach( $options as $option ) {
+			$checked = sanitize_title( $args[ 'selected' ] ) === $args[ 'selected' ] ? checked( $args[ 'selected' ], sanitize_title( $option ), false ) : checked( $args[ 'selected' ], $option, false );
+			$radios .= "<input type=\"radio\" id=\"{$name}-{$option}\" name=\"{$name}\" value=\"{$option}\" id=\"{$option}\" {$checked}><label for=\"{$name}-{$option}\">{$option}</label>";
+		}
+	}
+  
+	$radios .= '</div>';
+
+	return $html . $radios;
+}
+add_filter( 'woocommerce_dropdown_variation_attribute_options_html', 'dp_radio_variations', 20, 2 );

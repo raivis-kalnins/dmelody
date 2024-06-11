@@ -30,7 +30,7 @@
 		return '<div class="testimonials-slider swiper">
 					<div class="testimonials-list swiper-wrapper">'. $loop .'</div>
 					<div class="testimonials-slider--nav"><div class="swiper-button-prev"></div><div class="swiper-pagination"></div><div class="swiper-button-next"></div></div>
-					<!--<div class="wp-block-tfa-button-boot"><a class="btn btn-primary" href="'. $url .'/feedback/">View all Feedback</a></div>-->
+					<!--<div class="wp-block-dp-button-boot"><a class="btn btn-primary" href="'. $url .'/feedback/">View all Feedback</a></div>-->
 				</div>';
 	}
 	add_shortcode('testimonials', 'testimonialsShortcode');

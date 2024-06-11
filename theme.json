@@ -12,25 +12,8 @@
         "color": {
             "link": true,
             "duotone": "",
-            "palette": [
-                {
-                    "color": "#dd3333",
-                    "name": "red",
-                    "slug": "red"
-                },
-                {
-                    "color": "#000000",
-                    "name": "black",
-                    "slug": "black"
-                }
-            ],
-            "gradients": [
-                {
-                    "slug": "n-a",
-                    "gradient": "linear-gradient(to left,rgb(0,0,0) 0%)",
-                    "name": ""
-                }
-            ]
+            "palette": "",
+            "gradients": ""
         },
         "layout": {
             "contentSize": "100%",

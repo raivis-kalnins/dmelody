@@ -20,10 +20,10 @@ if ( !empty($formItems) ) :
 		// Form attributes
 		$current_url = home_url($_SERVER['REQUEST_URI']); //var_dump($current_url);
 		$site_url = site_url();
-		$formLang = $formItem['form_lang'] ?? ''; 
+		$formLang = $formItem['form_lang'] ?? '';
 		$form_title = $formItem['form_title'] ?? '';
 		$form_to_emails = $formItem['form_to_emails'] ?? '';
-		$form_short = $formItem['form_short'] ?? ''; //var_dump($form_short);
+		$form_short = $formItem['form_short'] ?? '';
 		$form_steps = $formItem['form_steps'] ?? '';
 		$file_max = $formItem['file_max'] ?? '';
 		$file_formats = $formItem['file_formats'] ?? '';
@@ -601,7 +601,7 @@ if ( !empty($formItems) ) :
 				</div>
 			</form>'.$mailSent.$response_txt.$captcha_script;
 
-			$eachformLang = '<div class="short-component acf-form acf-form-'.$formLang.'">'.$loop.'</div>'; //print_r($eachformLang);
+			$eachformLang = '<div class="short-component acf-form acf-form-'.$formLang.'">'.$loop.'</div>'; // print_r($eachformLang);
 
 			add_shortcode( 'acf-form_'.$formLang, function() use ($eachformLang) {
 				return $eachformLang;

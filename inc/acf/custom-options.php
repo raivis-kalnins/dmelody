@@ -200,11 +200,11 @@ $options_builder
 
 	// Extra SEO Filter options for generater URl's
 	->addTab('SEO Filter Options', ['label' => 'SEO','placement' => 'left'])
-	->addRepeater('tfa_seo_list', ['layout' => 'block', 'label' => 'SEO TFA custom Meta & H1 / Desc', 'wrapper' => ['width' => 100]])
-		->addText('tfa_seo_url', ['layout' => 'block', 'wrapper' => ['width' => 33.3], 'label' => 'TFA SEO URL'])
-		->addText('tfa_meta_title', ['layout' => 'block', 'wrapper' => ['width' => 33.3], 'label' => 'TFA SEO Meta Title'])
-		->addText('tfa_seo_title', ['layout' => 'block', 'wrapper' => ['width' => 33.3], 'label' => 'TFA SEO H1 Title'])
-		->addWysiwyg('tfa_seo_desc', ['layout' => 'block', 'wrapper' => ['width' => 100], 'label' => 'TFA SEO Description '])
+	->addRepeater('dp_seo_list', ['layout' => 'block', 'label' => 'SEO DP custom Meta & H1 / Desc', 'wrapper' => ['width' => 100]])
+		->addText('dp_seo_url', ['layout' => 'block', 'wrapper' => ['width' => 33.3], 'label' => 'DP SEO URL'])
+		->addText('dp_meta_title', ['layout' => 'block', 'wrapper' => ['width' => 33.3], 'label' => 'DP SEO Meta Title'])
+		->addText('dp_seo_title', ['layout' => 'block', 'wrapper' => ['width' => 33.3], 'label' => 'DP SEO H1 Title'])
+		->addWysiwyg('dp_seo_desc', ['layout' => 'block', 'wrapper' => ['width' => 100], 'label' => 'DP SEO Description '])
 	->endRepeater()
 
 	// Load More Anything options
