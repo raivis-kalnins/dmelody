@@ -115,7 +115,7 @@ if ( !empty($formItems) ) :
 		$full_name_field = $full_name_field ?? '';
 		if ( $full_name == 'true' ) {
 			$get_full_name = isset($_GET['full_name']) ? $_GET['full_name']: '';
-			$full_name_field = '<div class="col-12">'.$full_name_label.'<input type="text" name="full_name" placeholder="'.$full_name_pl.'" title="full-name" class="required" aria-required="true" required value="'.$get_full_name.'" autocomplete="name" /></div>';
+			$full_name_field = '<div class="col-lg-6">'.$full_name_label.'<input type="text" name="full_name" placeholder="'.$full_name_pl.'" title="full-name" class="required" aria-required="true" required value="'.$get_full_name.'" autocomplete="name" /></div>';
 		}
 		
 		// first_name
@@ -123,7 +123,7 @@ if ( !empty($formItems) ) :
 		$first_name_field = $first_name_field ?? '';
 		if ( $first_name == 'true' ) {
 			$get_first_name = isset($_GET['first_name']) ? $_GET['first_name']: '';
-			$first_name_field = '<div class="col-12">'.$first_name_label.'<input type="text" name="first_name" placeholder="'.$first_name_pl.'" title="first-name" class="required" aria-required="true" required value="'.$get_first_name.'" autocomplete="name" /></div>';
+			$first_name_field = '<div class="col-lg-6">'.$first_name_label.'<input type="text" name="first_name" placeholder="'.$first_name_pl.'" title="first-name" class="required" aria-required="true" required value="'.$get_first_name.'" autocomplete="name" /></div>';
 		}
 		
 		// last_name
@@ -131,7 +131,7 @@ if ( !empty($formItems) ) :
 		$last_name_field = $last_name_field ?? '';
 		if ( $last_name == 'true' ) {
 			$get_last_name = isset($_GET['last_name']) ? $_GET['last_name']: '';
-			$last_name_field = '<div class="col-12">'.$last_name_label.'<input type="text" name="last_name" placeholder="'.$last_name_pl.'" title="last-name" class="required" aria-required="true" required value="'.$get_last_name.'" autocomplete="name" /></div>'; 
+			$last_name_field = '<div class="col-lg-6">'.$last_name_label.'<input type="text" name="last_name" placeholder="'.$last_name_pl.'" title="last-name" class="required" aria-required="true" required value="'.$get_last_name.'" autocomplete="name" /></div>'; 
 		}
 		
 		// email
@@ -154,7 +154,7 @@ if ( !empty($formItems) ) :
 		$subject_field = $subject_field ?? '';
 		if ( $subject == 'true' ) {
 			$get_subject = isset($_GET['subject']) ? $_GET['subject']: '';
-			$subject_field = '<div class="col-12">'.$subject_label.'<input type="text" name="subject" placeholder="'.$subject_pl.'" title="subject" class="required" aria-required="true" required value="'.$get_subject.'" autocomplete="subject" /></div>'; 
+			$subject_field = '<div class="col-lg-6">'.$subject_label.'<input type="text" name="subject" placeholder="'.$subject_pl.'" title="subject" class="required" aria-required="true" required value="'.$get_subject.'" autocomplete="subject" /></div>'; 
 		}
 		
 		// company
@@ -162,7 +162,7 @@ if ( !empty($formItems) ) :
 		$company_field = $company_field ?? '';
 		if ( $company == 'true' ) {
 			$get_company = isset($_GET['company']) ? $_GET['company']: '';
-			$company_field = '<div class="col-12">'.$company_label.'<input type="text" name="company" placeholder="'.$company_pl.'" title="company" class="required" aria-required="true" required value="'.$get_company.'" autocomplete="company" /></div>'; 
+			$company_field = '<div class="col-lg-6">'.$company_label.'<input type="text" name="company" placeholder="'.$company_pl.'" title="company" class="required" aria-required="true" required value="'.$get_company.'" autocomplete="company" /></div>'; 
 		}
 		
 		// country
@@ -177,7 +177,7 @@ if ( !empty($formItems) ) :
 				$countries_options .='<option value="'.$country['countries_list_form'].'">'.$country['countries_list_form'].'</option>'; 
 			}
 			$countries_options .= '';
-			$country_field = '<div class="col-12">'.$country_label.'<select name="country" value="'.$get_country.'" autocomplete="country">'.$countries_options.'</select></div>';
+			$country_field = '<div class="col-lg-6">'.$country_label.'<select name="country" value="'.$get_country.'" autocomplete="country">'.$countries_options.'</select></div>';
 			//var_dump($get_country);
 		}
 		
@@ -195,7 +195,7 @@ if ( !empty($formItems) ) :
 				}
 			}
 			$sectors_options .= '';
-			$sectors_field = '<div class="col-12">'.$sectors_label.'<select name="sectors" value="'.$get_sectors.'" autocomplete="sector">'.$sectors_options.'</select></div>';
+			$sectors_field = '<div class="col-lg-6">'.$sectors_label.'<select name="sectors" value="'.$get_sectors.'" autocomplete="sector">'.$sectors_options.'</select></div>';
 			//var_dump($sectors_field);
 		}
 		
@@ -204,7 +204,7 @@ if ( !empty($formItems) ) :
 		$date_field = $date_field ?? '';
 		if ( $date == 'true' ) {
 			$date_val = '';
-			$date_field = '<div class="col-12">'.$date_label.'<input type="date" name="date" placeholder="'.$date_pl.'" title="date" class="required" value="'.$date_val.'" autocomplete="off" /></div>'; 
+			$date_field = '<div class="col-lg-6">'.$date_label.'<input type="date" name="date" placeholder="'.$date_pl.'" title="date" class="required" value="'.$date_val.'" autocomplete="off" /></div>'; 
 		}
 		
 		// time
@@ -212,7 +212,7 @@ if ( !empty($formItems) ) :
 		$time_field = $time_field ?? '';
 		if ( $time == 'true' ) {
 			$get_time = isset($_GET['time']) ? $_GET['time']: '';
-			$time_field = '<div class="col-12">'.$time_label.'<input type="time" name="time" placeholder="'.$time_pl.'" title="time" class="required" aria-required="true" required value="'.$get_time.'" autocomplete="off" /></div>'; 
+			$time_field = '<div class="col-lg-6">'.$time_label.'<input type="time" name="time" placeholder="'.$time_pl.'" title="time" class="required" aria-required="true" required value="'.$get_time.'" autocomplete="off" /></div>'; 
 		}
 		
 		// url
@@ -220,14 +220,14 @@ if ( !empty($formItems) ) :
 		$url_field = $url_field ?? '';
 		if ( $url == 'true' ) {
 			$get_url = isset($_GET['url']) ? $_GET['url']: '';
-			$url_field = '<div class="col-12">'.$url_label.'<input type="url" name="url" placeholder="'.$url_pl.'" title="url" class="required" aria-required="true" required value="'.$get_url.'" autocomplete="url" /></div>'; 
+			$url_field = '<div class="col-lg-6">'.$url_label.'<input type="url" name="url" placeholder="'.$url_pl.'" title="url" class="required" aria-required="true" required value="'.$get_url.'" autocomplete="url" /></div>'; 
 		}
 		
 		// range
 		$range = $formItem['range'] ?? '';
 		$range_field = $range_field ?? '';
 		if ( $range == 'true' ) {
-			$range_field = '<div class="col-12"><div style="width:100%">'.$range_label.' <sub>* '.$range_pl.'</sub></div><span class="field range-slider"><span class="range-slider__from">0</span><input type="range" name="range" min="0" max="5000" step="50" title="range" class="required range-slider__range" value="0" /><span class="range-slider__value">5000</span></span></div>'; 
+			$range_field = '<div class="col-lg-6"><div style="width:100%">'.$range_label.' <sub>* '.$range_pl.'</sub></div><span class="field range-slider"><span class="range-slider__from">0</span><input type="range" name="range" min="0" max="5000" step="50" title="range" class="required range-slider__range" value="0" /><span class="range-slider__value">5000</span></span></div>'; 
 		}
 
 		// located
@@ -235,7 +235,7 @@ if ( !empty($formItems) ) :
 		$located_field = $located_field ?? '';
 		if ( $located == 'true' ) {
 			$get_located = isset($_GET['located']) ? $_GET['located']: '';
-			$located_field = '<div class="col-12">'.$located_label.'<div class="row acf-radio"><div class="col-4"><div class="acf-radio--btn"><input type="radio" name="located" value="yes" checked /></div><span>Yes</span></div><div class="col-4"><div class="acf-radio--btn"><input type="radio" name="located" value="no" /></div><span>No</span></div><div class="col-4"><div class="acf-radio--btn acf-radio--btn_disabled"><input type="radio" name="located" value="any" disabled /></div><span>Any</span></div></div></div>'; 
+			$located_field = '<div class="col-lg-6">'.$located_label.'<div class="row acf-radio"><div class="col-4"><div class="acf-radio--btn"><input type="radio" name="located" value="yes" checked /></div><span>Yes</span></div><div class="col-4"><div class="acf-radio--btn"><input type="radio" name="located" value="no" /></div><span>No</span></div><div class="col-4"><div class="acf-radio--btn acf-radio--btn_disabled"><input type="radio" name="located" value="any" disabled /></div><span>Any</span></div></div></div>'; 
 		}
 		
 		// message
@@ -575,9 +575,9 @@ if ( !empty($formItems) ) :
 			'<form id="acf-form_'.$formLang.'" class="acf-form_form" action="#acf-form-sent-'.$formLang.'" method="post" novalidate>
 				<div class="h2">'.$form_title.'</div>
 				<div class="row form-step-1">'.
-					$full_name_field.$full_nameErr.
 					$first_name_field.$first_nameErr.
 					$last_name_field.$last_nameErr.
+					$full_name_field.$full_nameErr.
 					$email_field.$emailErr.
 					$phone_field.$phoneErr.
 					$subject_field.$subjectErr.
