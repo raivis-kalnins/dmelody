@@ -122,6 +122,12 @@ body {
 				}
 			}
 		}
+
+		&__songs-form {
+			background-size: auto 100% !important;
+			background-repeat: no-repeat !important;
+			background-position-x: right !important;
+		}
 	}
 
 	.wp-block-dp-column {

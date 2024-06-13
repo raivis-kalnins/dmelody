@@ -73,11 +73,11 @@ h1,
 	position: relative;
 	line-height: 67px;
 	letter-spacing: 0;
-	color: $grey;
+	color: $gold;
 
 	&::after {
 		content:'';
-		border-top: rgba($text-base,0.7) solid 5px;
+		border-top: rgba($gold,0.95) solid 5px;
 		border-radius: 14px;
 		position: absolute;
 		width: 35px;

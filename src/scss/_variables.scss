@@ -17,6 +17,7 @@ $blue-light: #14A8E8;
 $text-base: #18214C;
 $text-sec:#111529;
 $text-light: #E6E7EE;
+$gold: #B97F51;
 $grey: #72737E;
 $grey-light: #F9F9F9;
 $grey-dark: #222222;
@@ -32,6 +33,7 @@ $red: #FF0000;
 	--text-color-dark: #{$text-sec};
 	--bg-color: #{$white};
 	--base-color-white: #{$white};
+	--base-color-gold: #{$gold};
 	--base-color-grey: #{$grey};
 	--base-color-grey-light: #{$grey-light};
 	--base-color-grey-dark: #{$grey-dark};
@@ -47,6 +49,7 @@ $colours: (
 	"text-base": --text-color-base,
 	"text-sec": --text-color-sec,
 	"text-light": --text-color-light,
+	"gold": --base-color-gold,
 	"grey": --base-color-grey,
 	"grey-light": --base-color-grey-light,
 	"grey-dark": --base-color-grey-dark,
