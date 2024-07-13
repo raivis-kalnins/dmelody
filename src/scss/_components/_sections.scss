@@ -8,6 +8,16 @@ body {
 			background-size: 100% auto;
 			position: relative;
 
+			.row.one-column-layout .wp-block-dp-column.align-self-center.col-lg-6 {
+				border: 1px solid rgba(255, 255, 255, 0.27);
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+				background: rgba(255, 255, 255, 0.18);
+				-webkit-backdrop-filter: blur(4px);
+				backdrop-filter: blur(4px);				
+				border-radius: 12px;
+				padding: 15px 30px;
+			}
+
 			h2 {
 				
 				&::after {
