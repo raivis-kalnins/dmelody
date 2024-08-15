@@ -342,7 +342,7 @@ remove_action( 'wpcf7_swv_create_schema', 'wpcf7_swv_add_select_enum_rules', 20,
  */
 function override_yoast_breadcrumb_trail( $links ) {
 	global $post;
-	if ( is_home() || is_singular( 'post' ) || is_archive() && !is_woocommerce() ) {
+	if ( is_home() || is_singular( 'post' ) || is_archive() ) {
 		$breadcrumb[] = array(
 			'url' => get_permalink( get_page_by_title('blog') ),
 			'text' => 'Blog',
