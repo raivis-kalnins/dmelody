@@ -6,6 +6,7 @@
 	$col_mob = $settings[0]['col_mob_related_posts'] ?? '';
 	$swiper = $settings[0]['truefalse_swiper_related_posts'] ?? '';
 	$load_more = $settings[0]['truefalse_loadmore_related_posts'] ?? '';
+	$apply = $settings[0]['truefalse_form_related_posts'] ?? '';
 	$read_more = $settings[0]['truefalse_learnmore_related_posts'] ?? '';
 	$read_more_txt = $settings[0]['txt_learnmore_related_page'] ?? '';
 	//var_dump($swiper);
@@ -36,6 +37,7 @@
 						<div class="cat-list"><?php if ($cats) { echo '<i class="cat-ico"></i> '; echo join(' ', array_map(function($cats) { echo '<a href="' . esc_url( get_permalink( $post_id ) ) . '">' . $cats->name . '</a> '; }, get_the_category())); } ?></div>
 						<?php if (!empty($text)): ?><p><?=$text?></p><?php endif; ?>
 						<?php if ($read_more == 'true') : ?><a href="<?php echo get_permalink( $post_id ); ?>" class="btnon btn btn-more"><?php if (!empty($read_more_txt)): ?><?=$read_more_txt?><?php else: ?><?php if (get_locale() == 'lv') { ?>Lasīt vēl<?php } if (get_locale() == 'en_GB') { ?>Read more<?php } ?><?php endif; ?></a><?php endif; ?>
+						<?php if ($apply == 'true') : ?><a href="#apply-form" class="btnon btn btn-more btn-more__apply fancybox-inline" style="right:20px;z-index:7!important"><?php if (get_locale() == 'lv') { ?>Pieteikties<?php } else { ?>Apply<?php } ?></a><?php endif; ?>
 					</div>
 					<a href="<?php echo get_permalink( $post_id ); ?>" class="faux-link__overlay-link"></a>
 				</div>

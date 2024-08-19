@@ -44,7 +44,7 @@ $builder
 			'instructions' => '',
 			'required' => 0,
 			'wrapper' => [
-				'width' => '20',
+				'width' => '15',
 				'class' => '',
 				'id' => '',
 			],
@@ -62,7 +62,7 @@ $builder
 			'instructions' => '',
 			'required' => 0,
 			'wrapper' => [
-				'width' => '20',
+				'width' => '15',
 				'class' => '',
 				'id' => '',
 			],
@@ -80,7 +80,7 @@ $builder
 			'instructions' => '',
 			'required' => 0,
 			'wrapper' => [
-				'width' => '20',
+				'width' => '15',
 				'class' => '',
 				'id' => '',
 			],
@@ -109,6 +109,21 @@ $builder
 		])
 		->addTrueFalse('truefalse_loadmore_related_posts', [
 			'label' => 'Load more',
+			'instructions' => '',
+			'required' => 0,
+			'wrapper' => [
+				'width' => '10',
+				'class' => '',
+				'id' => '',
+			],
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+		])
+		->addTrueFalse('truefalse_form_related_posts', [
+			'label' => 'Apply',
 			'instructions' => '',
 			'required' => 0,
 			'wrapper' => [
