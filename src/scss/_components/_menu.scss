@@ -92,7 +92,6 @@ body {
 						}
 
 						& > .menu-item {
-							border-bottom: rgba($grey,0.4) solid 1px;
 							position: relative;
 							display: block;				
 							opacity: 1;
@@ -111,6 +110,10 @@ body {
 							a {
 								font-size: calc( $body + 3px);
 								font-weight: $medium;
+
+								&:hover {
+									color: $gold;
+								}
 
 								img {
 									display: none;
@@ -193,10 +196,11 @@ body {
 
 							& > a {
 								position: relative;
+								color: $gold;
 								
 								&::after {
 									content:'';
-									border-bottom: $grey solid 2px;
+									border-bottom: $gold solid 2px;
 									position: absolute;
 									bottom: -2px;
 									width: 15px;

@@ -154,6 +154,19 @@
 		}
 	}
 
+	&-more__apply {
+		padding: 19px 35px 20px 35px !important;
+		color: $white !important;
+		text-decoration: none;
+		background: $gold;		
+
+		&:hover,
+		&:active {
+			color: $gold !important;
+			background: rgba($gold,0.5);
+		}
+	}
+
 	// -- Sizes -- //
 
 	// * Default
