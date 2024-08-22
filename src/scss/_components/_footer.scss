@@ -97,7 +97,7 @@ footer {
 						top: inherit !important;
 						font-weight: $medium;
 						margin-right: 5px;
-						color: $text-base;
+						color: $white;
 						font-size: 14px;
 					}
 
@@ -115,10 +115,10 @@ footer {
 				&.contact-details {
 
 					a {
-						color: $text-base !important;
+						color: rgba($white,0.7) !important;
 
 						&:hover {
-							color: $blue-light !important;
+							color: $white !important;
 						}
 					}
 				}
@@ -164,11 +164,11 @@ footer {
 				.wp-block-social-links.is-style-logos-only .wp-social-link {
 				
 					svg path {
-						fill: $blue !important;
+						fill: rgba($white,0.5) !important;
 					}
 
 					&:hover svg path {
-						fill: $blue-light !important;
+						fill: rgba($white,0.9) !important;
 					}
 				}
 			}
