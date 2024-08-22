@@ -111,6 +111,18 @@ body {
 
 				&--nav {
 
+					.swiper-pagination {
+
+						&-bullet {
+							width: 14px;
+							height: 14px;
+
+							&-active {
+								background: $gold;
+							}
+						}
+					}
+
 					.swiper-button-prev,
 					.swiper-button-next {
 						display: none;

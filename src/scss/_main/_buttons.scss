@@ -363,7 +363,7 @@
 .scroll-up {
 	box-shadow: 0px 3px 15px rgba($grey-light,0.5);
 	animation: fade-in-up 2s linear both;
-	background-color: rgba($grey-dark,0.85);
+	background-color: rgba($gold,0.95);
 	transition: all .3s ease-out;
 	border-radius: 16px 16px 0 0;
 	cursor: pointer;
@@ -393,13 +393,13 @@
 	
 	&:hover {
 		bottom: 0;
-		background-color: $white;
+		background-color: rgba($gold,0.85);
 		transition: all .3s ease-out;
 
 		&::after {
-			border-right: 0.2em solid $blue;
-			border-top: 0.2em solid $blue;
-			margin-top: 20px;
+			border-right: 0.2em solid $white;
+			border-top: 0.2em solid $white;
+			transition: all .3s ease-out;
 		}
 	}
 }

@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	$('.foo__copy em').text(n).addClass('foo__copy-year');
 
+	$('div.row p:empty').hide();
+
 	/**
 	* Menu Scroll
 	*/
