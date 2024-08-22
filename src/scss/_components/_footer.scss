@@ -60,9 +60,10 @@ footer {
 		}
 
 		&__contacts {
+			background: rgba($gold,0.8) !important;
 
 			.container-boxed > .row {
-				padding: 20px 0;
+				padding: 10px 0;
 
 				@include media-breakpoint-down(lg) {
 					padding: 35px 0;
@@ -174,8 +175,8 @@ footer {
 		}
 
 		&__copy {
-			background: $grey-dark !important;
-			padding: 20px 0 20px 0;
+			background: rgba($gold,0.4) !important;
+			padding: 10px 0 10px 0;
 
 			@include media-breakpoint-down(lg) {
 				text-align: center;
@@ -183,7 +184,7 @@ footer {
 
 			&-year {
 				font-style: normal;
-				color: $white;
+				color: $text-base;
 			}
 
 			ul.bssbSocialShare {
@@ -193,8 +194,8 @@ footer {
 			p,
 			a, 
 			span {
-				font-weight: $regular !important;
-				color: $white !important;
+				font-weight: $medium !important;
+				color: $text-base !important;
 				max-width: fit-content;
 				font-size: 15px;
 				margin: 0 auto;		
@@ -212,7 +213,7 @@ footer {
 			}
 
 			a {
-				color: $white !important;
+				color: $text-base !important;
 
 				@include media-breakpoint-down(sm) {
 					display: inline-block;

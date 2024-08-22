@@ -135,13 +135,16 @@
 			width: 170px;
 			height: auto;
 
-			@include media-breakpoint-down(xl){
+			@include media-breakpoint-down(xl) {
+				height: 90px;
 				width: auto;
 			}
 		}
 	}
 
 	ul#lang-sw {
+		max-width: fit-content;
+		margin-top: 14px;
 
 		li {
 			list-style: none;
@@ -151,9 +154,32 @@
 				display: none;
 			}
 
+			&.lang-item {
+				padding: 0;
+
+				a {
+					margin-bottom: 3px;
+					display: block;
+					width: 30px;
+					height: 30px;
+				}
+
+				img {
+					display: none;
+				}
+				
+				&-lv a {
+					background: url('../../assets/img/i/lv.png') center / auto 100% no-repeat;
+				}
+
+				&-en a {
+					background: url('../../assets/img/i/en.png') center / auto 100% no-repeat;
+				}
+			}
+
 			&.current-lang {
 				pointer-events: none;
-				opacity: 0.7;
+				opacity: 0.4;
 			}
 		}
 	}

@@ -15,12 +15,12 @@
 			<div class="wp-block-dp-row-section container-boxed" style="">
 				<div class="row two-column-layout">
 					<!-- wp:dp/column {"width":"half","sizeLargeTablet":"col-lg-2","sizeTablet":"col-md-6","sizeMob":"col-sm-6"} -->
-					<div class="wp-block-dp-column align-self-center col-lg-2 col-md-6 col-sm-6" style="">
+					<div class="wp-block-dp-column align-self-center col-8 col-lg-2 col-md-6 col-sm-6" style="">
 						<!-- wp:site-logo {"width":70,"align":"left"} /-->
 					</div>
 					<!-- /wp:dp/column -->
 					<!-- wp:dp/column {"width":"half","sizeLargeTablet":"col-lg-10","sizeTablet":"col-md-6","sizeMob":"col-sm-6"} -->
-					<div class="wp-block-dp-column align-self-center col-lg-10 col-md-6 col-sm-6" style="">
+					<div class="wp-block-dp-column align-self-center col-4 col-lg-10 col-md-6 col-sm-6" style="">
 						<ul id="lang-sw"><?php pll_the_languages( array( 'show_flags' => 1,'show_names' => 0 ) ); ?></ul>						
 						<!-- wp:dp/main-menu-block /-->
 					</div>
