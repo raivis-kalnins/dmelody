@@ -12,7 +12,7 @@ $event_builder
     ->addTimePicker('event_time', ['layout' => 'block', 'label' => 'Event Time', 'wrapper' => ['width' => 16.5]])
     ->addNumber('event_adult_price', ['layout' => 'block', 'label' => 'Price', 'wrapper' => ['width' => 16.5]])
     ->addNumber('event_child_price', ['layout' => 'block', 'label' => 'Children Price', 'wrapper' => ['width' => 16.5]])
-    ->addTrueFalse('event_soldout', ['label' => 'Dold Out','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 16.5]])
+    ->addTrueFalse('event_soldout', ['label' => 'Sold Out','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 16.5]])
     ->addTrueFalse('event_done', ['label' => 'Done/Past','required' => 0,'default_value' => 0,'ui' => 1,'wrapper' => ['width' => 16.5]])
 
 ->setLocation('post_type', '==', 'events');
