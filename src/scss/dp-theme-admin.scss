@@ -26,4 +26,8 @@ body.wp-admin {
 	.ui-sortable-handle {
 		text-align: unset !important;
 	}
+
+	.mce-notification-inner {
+		display: none;
+	}
 }

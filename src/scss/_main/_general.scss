@@ -3,6 +3,17 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+    width: 15px;
+    background: $grey-light;
+}
+
+::-webkit-scrollbar-thumb {
+    background: -webkit-linear-gradient(transparent,$gold);
+    background: linear-gradient(transparent,$gold);
+    border-radius: 1vw;
+}
+
 html.has-modal-open {
 	overflow-y: auto;
 }

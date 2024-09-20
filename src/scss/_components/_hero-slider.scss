@@ -64,6 +64,10 @@
 					color: $white;
 					width: 100%;
 
+					&::after {
+						content: unset !important;
+					}
+
 					@include media-breakpoint-down(sm) {
 						line-height: 47px !important;
 					}

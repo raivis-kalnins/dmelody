@@ -77,5 +77,23 @@ body {
 				}
 			}
 		}
+
+		&-posts {
+
+			.related-posts-wrapper {
+				
+				.col {
+			
+					&.event-done {
+					
+						.wp-block-dp-cta-card {
+							//pointer-events: none;
+							filter: grayscale(.7);   /* 70% grayscale */
+							opacity: .45 !important;
+						}
+					}
+				}
+			}
+		}
 	}
 }

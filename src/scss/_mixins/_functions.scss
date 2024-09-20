@@ -19,15 +19,15 @@
     /* fallback/image non-cover color */
     background-color: $from;
     /* Firefox 3.6+ */
-    background-image: -moz-linear-gradient(76deg, $from 0%, $to $stop);
+    background-image: -moz-linear-gradient(76deg, $from 75%, $to $stop);
     /* Safari 5.1+, Chrome 10+ */
-    background-image: -webkit-linear-gradient(76deg, $from 0%, $to $stop);
+    background-image: -webkit-linear-gradient(76deg, $from 75%, $to $stop);
     /* Opera 11.10+ */
-    background-image: -o-linear-gradient(76deg, $from 0%, $to $stop);
+    background-image: -o-linear-gradient(76deg, $from 75%, $to $stop);
     /* IE10+ */
-    background: -ms-linear-gradient(76deg, $from 0%, $to $stop);
+    background: -ms-linear-gradient(76deg, $from 75%, $to $stop);
     /* Standard */
-    background: linear-gradient(76deg, $from 0%, $to $stop);
+    background: linear-gradient(76deg, $from 75%, $to $stop);
     /* IE6-9 */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
 }

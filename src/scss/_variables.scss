@@ -11,7 +11,6 @@ $body-font: 'IBM Plex Sans', sans-serif;
 // Brand colours
 $gradient: linear-gradient(120deg, rgb(6, 45, 185) 0%, rgb(5, 99, 212) 47.4%, rgb(20, 168, 232) 100%);
 
-
 $white: #FFFFFF;
 $black: #000000;
 $blue: #18214C;
@@ -20,6 +19,7 @@ $text-base: #18214C;
 $text-sec:#111529;
 $text-light: #E6E7EE;
 $gold: #A67529;
+$gold-dark: #533d1b;
 $grey: #72737E;
 $grey-light: #F9F9F9;
 $grey-dark: #222222;
@@ -43,72 +43,56 @@ $red: #FF0000;
 	--base-color-red: #{$red};
 }
 
-$colours: (
-	"white": --base-color-white,
-	"black": --base-color-black,
-	"blue": --primary-color,
-	"blue-light": --secundary-color,
-	"text-base": --text-color-base,
-	"text-sec": --text-color-sec,
-	"text-light": --text-color-light,
-	"gold": --base-color-gold,
-	"grey": --base-color-grey,
-	"grey-light": --base-color-grey-light,
-	"grey-dark": --base-color-grey-dark,
-	"orange": --base-color-orange,
-	"red": --base-color-red
-);
-
 body {
 
 	.has-text-color.has {
 		
 		&-white-color {
-			color: --base-color-white !important;
+			color: var(--base-color-white) !important;
 		}
 
 		&-black-color {
-			color: --base-color-black !important;
+			color: var(--base-color-black) !important;
 		}
 
 		&-primary-color {
-			color: --primary-color !important;
+			color: var(--primary-color) !important;
 		}
 
 		&-secundary-color {
-			color: --secundary-color !important;
+			color: var(--secundary-color) !important;
 		}
 
 		&-text-color-base {
-			color: --text-color-base !important;
+			color: var(--text-color-base) !important;
 		}
 
 		&-text-color-sec {
-			color: --text-color-sec !important;
+			color: var(--text-color-sec) !important;
 		}
 
 		&-text-color-light {
-			color: --text-color-dark !important;
+			color: var(--text-color-dark) !important;
 		}
 
 		&-base-color-grey {
-			color: --base-color-grey !important;
+			color: var(--base-color-grey) !important;
 		}
 
 		&-base-color-grey-light {
-			color: --base-color-grey-light !important;
+			color: var(--base-color-grey-light) !important;
 		}
 
 		&-base-color-grey-dark {
-			color: --base-color-grey-dark !important;
+			color: var(--base-color-grey-dark) !important;
 		}
 
 		&-base-color-orange {
-			color: --base-color-orange !important;
+			color: var(--base-color-orange) !important;
 		}
 
 		&-base-color-red {
-			color: --base-color-red !important;
+			color: var(--base-color-red) !important;
 		}
 	}
 }

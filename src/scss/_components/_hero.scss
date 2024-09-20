@@ -1,9 +1,5 @@
 .hero {	
-	background-position: right center !important;
-	background-color: $grey-dark !important;
-	border-bottom: $text-light solid 1px;
-	background-repeat: no-repeat;
-	background-size: auto 100%;	
+	background-color: $text-light !important;	
     position: relative;
 	margin-top: 94px;
     display: flex;
@@ -11,6 +7,33 @@
 	width: 100%;
 	z-index: 0;
     top: 0;
+
+	&::before {
+		content:'';
+		@include horizontal-gradient($gold-dark, transparent);
+		position: absolute;
+		display: block;
+		height: 100%;
+		width: 100%;
+		z-index: 1;		
+		left: 0;
+		top: 0;
+	}
+
+	&::after {
+		content:'';
+		background-position: right center !important;
+		border-bottom: $text-light solid 1px;
+		background-repeat: no-repeat;
+		background-size: auto 170%;	
+		position: absolute;
+		display: block;
+		height: 100%;
+		width: 100%;
+		z-index: -1;	
+		right: 0;
+		top: 0;
+	}
 
 	@include media-breakpoint-down(xl) {
 		background: $grey-light !important;

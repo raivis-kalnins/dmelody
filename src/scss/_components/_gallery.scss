@@ -18,6 +18,8 @@ body {
 			.col {
 
 				img {
+					box-shadow: 0 5px 10px rgba($black,0.4);
+					transition: all .3s ease-out;
 					min-height: 300px;
 					max-height: 300px;
 					object-fit: cover;

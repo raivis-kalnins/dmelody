@@ -55,9 +55,23 @@ body {
 
 		&__partners {
 
-			img {
-				border-radius: 14px;
-				display: block;
+			a {
+
+				img {
+					box-shadow: 0 5px 25px rgba($gold,0.7);
+					transition: all .3s ease-out;
+					border-radius: 14px;
+					display: block;
+				}
+
+				&:hover {
+
+					img {
+						box-shadow: 0 5px 35px rgba($gold,0.7);
+						transition: all .3s ease-out;
+						transform: scale(1.05);
+					}
+				}
 			}
 		}
 
@@ -138,8 +152,15 @@ body {
 				ul.wp-block-post-template {
 
 					li {
+						margin-right: 30px;
 						max-width: 20%;
+						float: left;						
 						padding: 0;
+
+						img {
+							border-radius: 14px;
+							height: 200px;
+						}
 					}
 				}
 			}

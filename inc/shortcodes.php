@@ -20,6 +20,17 @@ function dp_shortcode_swiper_nav( $sw ) {
 add_shortcode( 'swipernav', 'dp_shortcode_swiper_nav' );
 
 /*
+*  Create Shortcode to Display Back button [back-btn]
+*/
+function dp_shortcode_back_btn( $btn ) {
+	$btn = shortcode_atts( array(), $btn,'back-btn' );
+	if ( get_locale() == 'lv') { $back = str_replace('<p></p>','','Sākums'); }
+	if ( get_locale() == 'en_GB') { $back = str_replace('<p></p>','','Back to Home'); }
+	return '<p class="has-text-align-left btn-see-more--back" onclick="window.location.href=document.location.origin">'. $back .'</p>'; 
+}
+add_shortcode( 'back-btn', 'dp_shortcode_back_btn' );
+
+/*
 *  Create Shortcode to Display scroll down btn [scroll-down]
 */
 function dp_shortcode_scrolldown( $gm ) {

@@ -16,10 +16,10 @@ h6 {
 
 	@include fontRemSize($h1);
 	text-transform: none;
-	font-weight: $regular;
+	font-weight: $medium;
 	margin-bottom: 30px;
 	line-height: 1.2;
-	letter-spacing: 0;
+	letter-spacing: 3px;
 	color: $blue;
 
 	s,
@@ -68,7 +68,7 @@ h1,
 
 	@include fontRemSize($h2);
 	text-transform: uppercase;
-	font-weight: $medium;
+	font-weight: $bold;
 	margin-bottom: 30px;
 	position: relative;
 	line-height: 67px;

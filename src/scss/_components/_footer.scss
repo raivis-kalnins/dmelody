@@ -70,6 +70,19 @@ footer {
 				}
 			}
 
+			.wp-block-site-logo img {
+				background: rgba($white,0.2);
+				transition: all .3s ease-out;
+				border-radius: 14px;
+				margin-top: 3px;
+				padding: 5px;
+
+				&:hover {
+					transition: all .3s ease-out;
+					background: rgba($white,0.5);
+				}
+			}
+
 			ul {
 				display: inline-flex;
 				flex-wrap: nowrap;
@@ -175,7 +188,7 @@ footer {
 		}
 
 		&__copy {
-			background: rgba($gold,0.4) !important;
+			background: $gold-dark !important;
 			padding: 10px 0 10px 0;
 
 			@include media-breakpoint-down(lg) {
@@ -184,7 +197,7 @@ footer {
 
 			&-year {
 				font-style: normal;
-				color: $text-base;
+				color: $white;
 			}
 
 			ul.bssbSocialShare {
@@ -195,7 +208,7 @@ footer {
 			a, 
 			span {
 				font-weight: $medium !important;
-				color: $text-base !important;
+				color: $white !important;
 				max-width: fit-content;
 				font-size: 15px;
 				margin: 0 auto;		
@@ -213,7 +226,7 @@ footer {
 			}
 
 			a {
-				color: $text-base !important;
+				color: $white !important;
 
 				@include media-breakpoint-down(sm) {
 					display: inline-block;
