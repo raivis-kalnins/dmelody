@@ -83,6 +83,29 @@ body {
 			.related-posts-wrapper {
 				
 				.col {
+
+					.wp-block-dp-cta-card {
+						position: relative;
+						overflow: hidden;
+
+						&::before {
+							content:'NENOKAVĒ';
+							-webkit-transform: translateY(-15px) translateX(-15px) translateX(70px) rotate(45deg);
+							-ms-transform: translateY(-15px) translateX(-15px) translateX(70px) rotate(45deg);
+							transform: translateY(-15px) translateX(-15px) translateX(70px) rotate(45deg);
+							text-transform: uppercase;
+							background-color: $gold;
+							padding: 15px 70px;
+							font-weight: $bold;
+							position: absolute;
+							margin-top: 45px;
+							font-size: 14px;
+							display: block;
+							color: $white;								
+							right: 0;
+							top: 0;
+						}
+					}
 			
 					&.event-done {
 					
@@ -90,6 +113,11 @@ body {
 							//pointer-events: none;
 							filter: grayscale(.7);   /* 70% grayscale */
 							opacity: .45 !important;
+
+							&::before {
+								content:'NOKAVĒTS';
+								background-color: $grey;
+							}
 						}
 					}
 				}
