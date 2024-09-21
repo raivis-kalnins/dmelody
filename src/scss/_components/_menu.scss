@@ -111,6 +111,13 @@ body {
 								font-size: calc( $body + 3px);
 								font-weight: $medium;
 
+								@include media-breakpoint-down(xl) {
+									margin-bottom: 15px;
+									text-align: center;
+									position: relative;
+									font-size: 22px;
+								}
+
 								&:hover {
 									color: $gold;
 								}
@@ -206,6 +213,10 @@ body {
 									width: 15px;
 									height: 0;
 									left: 0;
+
+									@include media-breakpoint-down(xl) {
+										display: none;
+									}
 								}
 							}
 						}

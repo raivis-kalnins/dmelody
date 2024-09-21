@@ -8,15 +8,20 @@
 		width: 100%;
 		
 		@include media-breakpoint-down(xl) {
-			padding-top: 74px;
+			padding-top: 110px;
 			min-height: fit-content;
 			height: fit-content;
 		}
 
-		@include media-breakpoint-down(sm) {
-			min-height: 1150px;
-			max-height: 1150px;
-			height: 1150px;
+		.swiper-wrapper {
+
+			@include media-breakpoint-down(xl) {
+				height: 75vh;
+			}
+
+			@include media-breakpoint-down(sm) {
+				height: 95h;
+			}
 		}
 	}
 
@@ -49,11 +54,11 @@
 				position: relative;
 				text-align: left;
 				width: 100%;
-				z-index: 2;
-				
+				z-index: 2;				
 
 				@include media-breakpoint-down(xl) {
-					align-self: baseline;
+					align-self: center;
+					width: 58%;
 				}
 
 				h2 {
@@ -69,7 +74,7 @@
 					}
 
 					@include media-breakpoint-down(sm) {
-						line-height: 47px !important;
+						line-height: 1 !important;
 					}
 
 					em,

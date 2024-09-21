@@ -150,16 +150,24 @@ body {
 			.wp-block-query {
 
 				ul.wp-block-post-template {
+					display: inline-flex;
+					width: 100%;
+					gap: 20px;
 
 					li {
-						margin-right: 30px;
-						max-width: 20%;
-						float: left;						
+						flex-wrap: wrap;
+						display: flex;
+						float: left;
+						width: 25%;						
 						padding: 0;
 
-						img {
-							border-radius: 14px;
-							height: 200px;
+						figure {
+							width: 100%;
+
+							img {
+								border-radius: 14px;
+								height: 200px;
+							}
 						}
 					}
 				}
@@ -170,6 +178,13 @@ body {
 			background-size: auto 100% !important;
 			background-repeat: no-repeat !important;
 			background-position-x: right !important;
+		}
+
+		&__contacts {
+
+			.wp-block-dp-column {
+				filter: grayscale(100%);
+			}
 		}
 	}
 

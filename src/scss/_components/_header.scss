@@ -144,7 +144,16 @@
 
 	ul#lang-sw {
 		max-width: fit-content;
+		position: absolute;
 		margin-top: 14px;
+		top: -45px;
+
+		@include media-breakpoint-down(xl) {
+			margin-top: 0;
+			right: 80px;
+			top: -35px;
+		}
+		
 
 		li {
 			list-style: none;
