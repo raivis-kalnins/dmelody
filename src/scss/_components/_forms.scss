@@ -1,8 +1,8 @@
 .acf-form,
 .wpcf7 {
-	max-width: 100%;
-	margin: 0 auto !important;
 	position: relative;
+	max-width: 100%;
+	width: 100%;
 	z-index: 1;
 
 	// all inputs except radios and checkboxes inherit from form-control
@@ -52,7 +52,7 @@
 			&-runnable-track {
 				border: 0.2px solid $black;
 				border-radius: 50px;
-				background: $blue;
+				background: $white;
 				box-shadow: none;
 				cursor: pointer;
 				width: 100%;
@@ -78,7 +78,7 @@
 			&-range-track {
 				border: 0.2px solid $black;
 				border-radius: 50px;
-				background: $blue;
+				background: $white;
 				appearance: none;
 				box-shadow: none;
 				cursor: pointer;
@@ -107,22 +107,22 @@
 			border: 0;
 
 			&::-ms-fill-lower {
-				background: $blue;
+				background: $white;
 			}
 
 			&::-ms-fill-upper {
-				background: $blue;
+				background: $white;
 			}
 
 			&::-webkit-slider-runnable-track {
-				background: $blue;
+				background: $white;
 			}
 		}
 	}
 
 	input[type=radio] {
 		margin: 0 30px 0 -10px;
-		accent-color: $blue;
+		accent-color: $white;
 		border-radius: 50%;
 		cursor: pointer;
 		display: block;
@@ -136,8 +136,8 @@
 			animation-iteration-count: 4;
 			animation: outline-checked;
 			animation-duration: 0.1s;
-			background-color: $blue;
-			outline-color: $blue;
+			background-color: $white;
+			outline-color: $white;
 		}
 
 		@keyframes outline-checked {
@@ -171,6 +171,9 @@
 	}
 
 	&-form {
+		padding: 0 0 20px 0 !important;
+		margin: 0 auto !important;
+		width: 100%;
 
 		p {
 			border-bottom: 0;
@@ -188,7 +191,7 @@
 		font-style: oblique;
 		letter-spacing: 1px;
 		position: relative;
-		color: $red;
+		color: $white;
 		font-size: 12px;
 		float: left;
 	}
@@ -206,7 +209,7 @@
 		font-weight: $medium;
 		line-height: 32px;
 		font-size: 11px;
-		color: $red;		
+		color: $white;		
 	}
 
 	p.info-tip {
@@ -398,7 +401,7 @@
 			display: inline-block;		
 			position: relative;
 			line-height: 25px;
-			color: $text-base;
+			color: $white;
 			margin-top: 15px;
 			padding: 10px 0;
 			font-size: 16px;
@@ -557,6 +560,10 @@
 	}
 }
 
+.get-form {
+    max-width: calc(100vw - 40px);
+}
+
 .select2-dropdown .select2-search--dropdown {
 	//display: none !important;
 	input.select2-search__field:focus-visible {
@@ -707,7 +714,7 @@
 			&::after {
 				content: '';
 				position: absolute;
-				background-color: $blue;
+				background-color: $white;
 				display: inline-block;
 				transform-origin: left top;
 				border-radius: 2px;

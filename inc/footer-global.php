@@ -8,6 +8,7 @@ function footer_global() {
 	global $post;
 ?>
 <!-- Footer DP Global -->
+<div class="fancybox-hidden" style="display:none"><div id="apply-form" class="get-form" style="background:#A67529;padding:40px"><?=do_shortcode('[contact-form-7 id="e5f3308" title="Apply Event"]')?></div></div>
 <?php  if( has_post_thumbnail() ) :  $hero_bg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
 	<!-- BG Hero -->
 	<style>.hero::after,.hero-bg-mob::after{background-image:url('<?=$hero_bg[0]; ?>');}</style>
