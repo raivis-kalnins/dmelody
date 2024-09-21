@@ -88,6 +88,13 @@ footer {
 				flex-wrap: nowrap;
 				margin: 0;
 
+				&.contact-details {
+
+					@include media-breakpoint-down(sm) {
+						flex-wrap: wrap;
+					}
+				}
+
 				li {
 					margin-bottom: 0 !important;
 					margin-right: 40px;
@@ -96,6 +103,10 @@ footer {
 
 					@include media-breakpoint-down(lg) {
 						margin-right: 10px;
+					}
+
+					@include media-breakpoint-down(sm) {
+						padding-left: 25% !important;
 					}
 
 					a,

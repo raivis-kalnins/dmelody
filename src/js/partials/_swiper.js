@@ -80,6 +80,17 @@ document.addEventListener("DOMContentLoaded", function() {
 		// autoplay: {
 		// 	disableOnInteraction: false,
 		// },
+		breakpoints: {
+			320: {
+				slidesPerView: 1
+			},
+			760: {
+				slidesPerView: 2
+			},
+			992: {
+				slidesPerView: 2
+			}
+		},
 		keyboard: {
 			enabled: true,
 			onlyInViewport: false,

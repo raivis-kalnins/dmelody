@@ -110,6 +110,11 @@ body {
 							font-size: 24px;
 							display: block;
 							width: 100%;
+
+							@include media-breakpoint-down(lg) {
+								line-height: 1;
+								top: 20px;
+							}
 						}
 
 						&--text {
@@ -154,12 +159,20 @@ body {
 					width: 100%;
 					gap: 20px;
 
+					@include media-breakpoint-down(lg) {
+						flex-wrap: wrap;
+					}
+
 					li {
 						flex-wrap: wrap;
 						display: flex;
 						float: left;
 						width: 25%;						
 						padding: 0;
+
+						@include media-breakpoint-down(lg) {
+							width: 100%;	
+						}
 
 						figure {
 							width: 100%;
