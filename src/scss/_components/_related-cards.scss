@@ -133,10 +133,12 @@ html[lang=en-GB] body {
 		
 		.wp-block-dp-cta-card::before {
 			content:'COMING SOON';
+			margin-top: 64px;
 		}
 
 		&.event-done .wp-block-dp-cta-card::before {
 			content:'TOO LATE';
+			margin-top: 45px;
 		}
 	}
 }
