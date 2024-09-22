@@ -564,7 +564,8 @@ body {
 			}
 
 			h1 {
-				font-weight: $black;
+				font-weight: $bold;
+				color: $gold;
 			}
 
 			.wp-block-search {
@@ -574,7 +575,7 @@ body {
 				}
 
 				&__button {
-					background-color: transparent;
+					background-color: $gold;
 					border: 0;
 
 					svg {
@@ -587,8 +588,14 @@ body {
 			}
 
 			.btn {
+				border-color: $gold !important;
+				background-color: $gold;
 				margin-top: 40px;
 				padding: 15px 40px;
+
+				&:hover {
+					background-color: rgba($gold,0.7) !important;
+				}
 			}
 		}
 	}

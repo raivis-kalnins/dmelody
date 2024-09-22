@@ -126,3 +126,17 @@ body {
 		}
 	}
 }
+
+html[lang=en-GB] body {
+
+	.related-posts .related-posts-wrapper .col {
+		
+		.wp-block-dp-cta-card::before {
+			content:'COMING SOON';
+		}
+
+		&.event-done .wp-block-dp-cta-card::before {
+			content:'TOO LATE';
+		}
+	}
+}

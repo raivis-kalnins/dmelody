@@ -10,11 +10,12 @@
 
 	&::before {
 		content:'';
-		@include horizontal-gradient($gold-dark, transparent);
+		border-right: $gold solid 10px;
+		@include horizontal-gradient($gold, $gold-dark);
 		position: absolute;
 		display: block;
 		height: 100%;
-		width: 100%;
+		width: 70%;
 		z-index: 1;		
 		left: 0;
 		top: 0;

@@ -173,10 +173,10 @@ a {
 
 p,
 span {
-	@include fontRemSize($body);
-	color: rgba($text-sec, 0.7);
+	@include fontRemSize($t21);
 	font-family: $body-font;
 	font-weight: $light;
+	color: $text-base;
 	letter-spacing: 0;
 	
 

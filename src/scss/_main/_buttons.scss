@@ -158,7 +158,11 @@
 		padding: 19px 35px 20px 35px !important;
 		color: $white !important;
 		text-decoration: none;
-		background: $gold;		
+		background: $gold;
+		
+		@include media-breakpoint-down(md) {
+			padding: 14px 18px 15px 18px !important;
+		}
 
 		&:hover,
 		&:active {
@@ -213,9 +217,9 @@
 		margin: 15px 10px 0 0;
 		padding-right: 34px;
 		position: relative;
-		cursor: pointer;
-		font-size: 15px;	
 		color: $text-base;
+		cursor: pointer;
+		font-size: 15px;		
 		float: right;
 		height: 20px;
 		border: 0;
@@ -245,11 +249,13 @@
 			}
 		}
 
-		&--back {
-			width: fit-content;
+		&--back {			
 			color: rgba($text-base,0.5);
+			@include fontRemSize($t21);
+			margin: 15px 0 50px 0;	
 			padding: 0 0 0 20px;
-			margin: 15px 0 30px 0;			
+			width: fit-content;
+			line-height: 1;			
 			float: none;
 
 			&::after {
@@ -263,7 +269,7 @@
 				transition: all .3s ease-out;				
 				position: absolute;
 				display: block;
-				height: 10px;
+				height: 15px;
 				width: 10px;
 				left: -1px;
 				margin: 0;
