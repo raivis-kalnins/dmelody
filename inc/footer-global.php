@@ -50,7 +50,8 @@ function footer_global() {
 				var $kids = $("#apply-form .f-kids").val();
 				setTimeout(function() {
 					if ( $kids >= 1 ) {
-						$('.f-sum').text(parseFloat((parseFloat($adults) + parseFloat($kids)) * 5));
+						$('.f-sum').text( ( parseFloat($adults) * 5 ) + ( parseFloat($kids) * 5 ) );
+						$('.f-sum').val( ( parseFloat($adults) * 5 ) + ( parseFloat($kids) * 5 ) );
 						$('.amount').val(5);
 						$('.f-quantity').text(parseFloat($adults) + parseFloat($kids));
 						$('.quantity').val(parseFloat($adults) + parseFloat($kids));
