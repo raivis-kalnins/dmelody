@@ -27,44 +27,7 @@ function footer_global() {
 	document.addEventListener("DOMContentLoaded",function(){ 
 		var $=jQuery.noConflict(), 
 			home_url='<?=home_url()?>';
-
 		$('.btn-back-home').attr('href',home_url);
-
-		$('#events .btn-more__apply').on('click', function() {
-			var $adult_price = $(this).parent().find('.event-details .event-adult-price').text();
-			var $adult_price_val = ( $adult_price / 5 );
-			var $t = $(this).parent().find('.h3 a').text();
-			setTimeout(function() {				
-				$('#apply-form .event-title').val($t);
-				$('.adult-price-val-num').attr('value',$adult_price_val);
-				//console.log($adult_price_val);
-			}, 200);
-		});
-
-		$("#apply-form").change(function() {
-			setTimeout(function() {
-				var $num = $('.adult-price-val-num').val();
-				var $adults_val = $("#apply-form .f-adults").val();
-				console.log($adults_val);
-				var $adults = ( parseFloat($adults_val) * parseFloat($num) );
-				var $kids = $("#apply-form .f-kids").val();
-				setTimeout(function() {
-					if ( $kids >= 1 ) {
-						$('.f-sum').text( ( parseFloat($adults) * 5 ) + ( parseFloat($kids) * 5 ) );
-						$('.f-sum').val( ( parseFloat($adults) * 5 ) + ( parseFloat($kids) * 5 ) );
-						$('.amount').val(5);
-						$('.f-quantity').text(parseFloat($adults) + parseFloat($kids));
-						$('.quantity').val(parseFloat($adults) + parseFloat($kids));
-					} else {
-						$('.f-sum').text(parseFloat(parseFloat($adults) * 5));
-						$('.f-sum').val(parseFloat(parseFloat($adults) * 5));
-						$('.amount').val(5);
-						$('.f-quantity').text(parseFloat($adults));
-						$('.quantity').val(parseFloat($adults));
-					}
-				}, 200);
-			}, 300);
-		});
 	});
 </script>
 <!-- /Footer DP Global -->

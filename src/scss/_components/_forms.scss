@@ -831,3 +831,72 @@
 		height: 0;
 	}
 }
+
+// Number Input
+input[type="number"] {
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+  
+.number-input {
+	flex-direction: column;	
+    border-radius: 25px;
+	position: relative;
+	background: $white;
+	width: fit-content;
+	overflow: hidden;
+	flex-wrap: wrap;
+	display: flex;
+	height: 52px;
+
+	.wpcf7-not-valid-tip {
+		position: absolute;
+	}
+  
+	button {		
+		background-color: transparent;
+		font-family: $heading-font;
+		-webkit-appearance: none;
+		font-weight: $medium;	
+		position: relative;
+		cursor: pointer;
+		display: block;
+		border: none;
+		outline:none;
+		height: 100%;
+		width: 40px;
+		margin: 0;
+		border: 0;
+		top: 0;
+
+		&::before {
+			transform: translate(-50%,-50%);
+			position: absolute;
+			color: $gold-dark;
+			left: 50%;
+			top: 50%;
+		}
+		
+		&.minus {
+			left: 0;
+
+			&:before {
+				content: '-';
+			}
+		}
+
+		&.plus{
+			right: 0;
+
+			&::before {
+				content:'+';
+			}
+		}
+	}
+}
