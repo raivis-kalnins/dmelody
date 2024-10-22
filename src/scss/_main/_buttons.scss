@@ -489,10 +489,10 @@
 
 	&-outer {
 		border-radius: 0;
-	}
 
-	&-content {
-		border: 3px solid $white !important;
+		@include media-breakpoint-down(md) {
+			max-width: calc(100vw - 40px);
+		}
 	}
 
 	&-title-over {

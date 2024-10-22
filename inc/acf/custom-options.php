@@ -46,11 +46,12 @@ $options_builder
 	->addText('map_address', ['layout' => 'block', 'label' => 'Full adress (*if need below Map Frame)','instructions' => 'To show map Contact Us page or other place - use ready WP Map pattern', 'wrapper' => ['width' => 100]])
 	->addEmail('email', ['label' => 'E-mail', 'wrapper' => ['width' => 100]])
 	->addText('tel', ['label' => 'Phone'])
-	->addUrl('soc_fb', ['layout' => 'block', 'label' => 'Facebook', 'default_value' => 'https://facebook.com', 'wrapper' => ['width' => 20]])
-	->addUrl('soc_in', ['layout' => 'block', 'label' => 'Instagram', 'default_value' => 'https://instagram.com', 'wrapper' => ['width' => 20]])
-	->addUrl('soc_ln', ['layout' => 'block', 'label' => 'Linkedin', 'default_value' => 'https://linkedin.com', 'wrapper' => ['width' => 20]])
-	->addUrl('soc_tw', ['layout' => 'block', 'label' => 'Twitter', 'default_value' => 'https://twitter.com', 'wrapper' => ['width' => 20]])
-	->addUrl('soc_yt', ['layout' => 'block', 'label' => 'Youtube', 'default_value' => 'https://youtube.com', 'wrapper' => ['width' => 20]])
+	->addUrl('soc_fb', ['layout' => 'block', 'label' => 'Facebook', 'default_value' => 'https://facebook.com', 'wrapper' => ['width' => 16.5]])
+	->addUrl('soc_in', ['layout' => 'block', 'label' => 'Instagram', 'default_value' => 'https://instagram.com', 'wrapper' => ['width' => 16.5]])
+	->addUrl('soc_ln', ['layout' => 'block', 'label' => 'Linkedin', 'default_value' => 'https://linkedin.com', 'wrapper' => ['width' => 16.5]])
+	->addUrl('soc_tw', ['layout' => 'block', 'label' => 'Twitter', 'default_value' => 'https://twitter.com', 'wrapper' => ['width' => 16.5]])
+	->addUrl('soc_yt', ['layout' => 'block', 'label' => 'Youtube', 'default_value' => 'https://youtube.com', 'wrapper' => ['width' => 16.5]])
+	->addUrl('soc_tk', ['layout' => 'block', 'label' => 'Youtube', 'default_value' => 'https://www.tiktok.com', 'wrapper' => ['width' => 16.5]])
 
 	// Theme Variables
 	->addTab('Theme Settings', ['placement' => 'left','wrapper' => ['width' => 5]])

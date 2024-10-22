@@ -260,6 +260,13 @@
 					line-height: 25px;
 				}
 
+				.event-details {
+
+					@include media-breakpoint-down(sm) {
+						max-width: 50%;
+					}
+				}
+
 				.btn-more {
 					position: absolute;
 					bottom: 30px;

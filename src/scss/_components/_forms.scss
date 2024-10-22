@@ -820,3 +820,14 @@
 		}
 	}
 }
+
+#apply-form.get-form {
+
+	@include media-breakpoint-down(md) {
+		padding: 10px !important;
+	}
+
+	.wp-stripe-express-shortcode {
+		height: 0;
+	}
+}
