@@ -51,7 +51,7 @@ $options_builder
 	->addUrl('soc_ln', ['layout' => 'block', 'label' => 'Linkedin', 'default_value' => 'https://linkedin.com', 'wrapper' => ['width' => 16.5]])
 	->addUrl('soc_tw', ['layout' => 'block', 'label' => 'Twitter', 'default_value' => 'https://twitter.com', 'wrapper' => ['width' => 16.5]])
 	->addUrl('soc_yt', ['layout' => 'block', 'label' => 'Youtube', 'default_value' => 'https://youtube.com', 'wrapper' => ['width' => 16.5]])
-	->addUrl('soc_tk', ['layout' => 'block', 'label' => 'Youtube', 'default_value' => 'https://www.tiktok.com', 'wrapper' => ['width' => 16.5]])
+	->addUrl('soc_tk', ['layout' => 'block', 'label' => 'TikTok', 'default_value' => 'https://www.tiktok.com', 'wrapper' => ['width' => 16.5]])
 
 	// Theme Variables
 	->addTab('Theme Settings', ['placement' => 'left','wrapper' => ['width' => 5]])
