@@ -8,6 +8,10 @@
 	z-index: 0;
     top: 0;
 
+	@include media-breakpoint-down(xl) {
+		background: transparent !important;
+	}
+
 	&::before {
 		content:'';
 		border-right: $gold solid 10px;
@@ -19,6 +23,11 @@
 		z-index: 1;		
 		left: 0;
 		top: 0;
+
+		@include media-breakpoint-down(xl) {
+			width: 100%;
+			border: 0;
+		}
 	}
 
 	&::after {
@@ -34,6 +43,10 @@
 		z-index: -1;	
 		right: 0;
 		top: 0;
+
+		@include media-breakpoint-down(xl) {
+			display: none;
+		}
 	}
 
 	@include media-breakpoint-down(xl) {

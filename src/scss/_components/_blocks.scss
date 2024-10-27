@@ -265,6 +265,11 @@
 					@include media-breakpoint-down(sm) {
 						max-width: 50%;
 					}
+
+					em {
+						font-style: normal;
+						font-weight: $medium;
+					}
 				}
 
 				.btn-more {
