@@ -32,10 +32,10 @@
 
 	&::after {
 		content:'';
-		background-position: right center !important;
+		background-position: right top !important;
 		border-bottom: $text-light solid 1px;
 		background-repeat: no-repeat;
-		background-size: 120% auto;	
+		background-size: 840px auto;
 		position: absolute;
 		display: block;
 		height: 100%;
