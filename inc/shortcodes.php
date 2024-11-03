@@ -35,13 +35,15 @@ add_shortcode( 'back-btn', 'dp_shortcode_back_btn' );
 */
 function dp_shortcode_apply_btn( $btn ) {
 	$btn = shortcode_atts( array(), $btn,'apply-btn' );
+	$event_details = get_fields($post_id,'event_details') ?? '';
+	$event_adult_price = $event_details['event_adult_price'] ?? '';
+	$event_child_price = $event_details['event_child_price'] ?? '';
 	if ( $event_done == 'true' ) { $event = 'display:none!important'; }
 	if ( get_locale() == 'lv' ) { $apply = str_replace('<p></p>','','Pieteikties'); }
 	if ( get_locale() == 'en_GB' ) { $apply = str_replace('<p></p>','','Apply'); }
-	return '<a href="#apply-form" class="btnon btn btn-more btn-more__apply fancybox-inline" style="right:20px;z-index:7!important;'.$event.'">'.$apply.'</a>';
+	return '<a href="#apply-form" class="btnon btn btn-more btn-more__apply fancybox-inline" style="right:20px;z-index:7!important;'.$event.'">'.$apply.'</a><span class="event-details hidden"><i class="event-adult-price">'.$event_adult_price.'</i></span>';
 }
 add_shortcode( 'apply-btn', 'dp_shortcode_apply_btn' );
-
 
 /*
 *  Create Shortcode to Display scroll down btn [scroll-down]

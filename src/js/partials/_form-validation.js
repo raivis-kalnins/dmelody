@@ -18,8 +18,9 @@ document.addEventListener("DOMContentLoaded", function() {
 		var $adult_price = $(this).parent().find('.event-details .event-adult-price').text();
 		var $adult_price_val = ( $adult_price / 5 );
 		var $t = $(this).parent().find('.h3 a').text();
+		var $st = $('body.single-events .wp-block-post-title').text();
 		setTimeout(function() {				
-			$('#apply-form .event-title').val($t);
+			$('#apply-form .event-title').val($t + $st);
 			$('.adult-price-val-num').attr('value',$adult_price_val);
 			//console.log($adult_price_val);
 		}, 200);
