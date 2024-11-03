@@ -37,7 +37,7 @@ function dp_shortcode_apply_btn( $btn ) {
 	$btn = shortcode_atts( array(), $btn,'apply-btn' );
 	$event_details = get_fields($post_id,'event_details') ?? '';
 	$event_adult_price = $event_details['event_adult_price'] ?? '';
-	$event_child_price = $event_details['event_child_price'] ?? '';
+	$event_done = $event_details['event_done'] ?? '';
 	if ( $event_done == 'true' ) { $event = 'display:none!important'; }
 	if ( get_locale() == 'lv' ) { $apply = str_replace('<p></p>','','Pieteikties'); }
 	if ( get_locale() == 'en_GB' ) { $apply = str_replace('<p></p>','','Apply'); }
