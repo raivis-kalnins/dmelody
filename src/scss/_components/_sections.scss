@@ -55,21 +55,38 @@ body {
 
 		&__partners {
 
-			a {
+			.container-boxed {
 
-				img {
-					box-shadow: 0 5px 25px rgba($gold,0.7);
-					transition: all .3s ease-out;
-					border-radius: 14px;
-					display: block;
-				}
+				& > .row {
 
-				&:hover {
+					.wp-block-dp-column {
 
-					img {
-						box-shadow: 0 5px 35px rgba($gold,0.7);
-						transition: all .3s ease-out;
-						transform: scale(1.05);
+						@include media-breakpoint-down(xd) {
+							text-align: center !important;
+						}
+
+						a {
+
+							img {
+								box-shadow: 0 5px 25px rgba($gold,0.7);
+								transition: all .3s ease-out;
+								border-radius: 14px;
+								display: block;
+
+								@include media-breakpoint-down(xd) {
+									width: 100% !important;
+								}
+							}
+
+							&:hover {
+
+								img {
+									box-shadow: 0 5px 35px rgba($gold,0.7);
+									transition: all .3s ease-out;
+									transform: scale(1.05);
+								}
+							}
+						}
 					}
 				}
 			}
